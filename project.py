@@ -22,14 +22,14 @@ setosa=df[df['Name']=='Iris-setosa']
 versicolor =df[df['Name']=='Iris-versicolor']
 virginica =df[df['Name']=='Iris-virginica']
 
-# Univariate Distribution
+ Univariate Distribution
 
-#print(df.head())
-#sns.distplot(setosa.PetalLength, norm_hist=False)
-#sns.distplot(setosa.PetalWidth, norm_hist=False)
-#sns.distplot(versicolor.SepalLength, norm_hist=False)
-#sns.distplot(virginica.SepalLength, norm_hist=False)
-#plt.show()
+print(df.head())
+sns.distplot(setosa.PetalLength, norm_hist=False)
+sns.distplot(setosa.PetalWidth, norm_hist=False)
+sns.distplot(versicolor.SepalLength, norm_hist=False)
+sns.distplot(virginica.SepalLength, norm_hist=False)
+plt.show()
 
 #qqplot also shows that the data is normally distributed http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.ProbPlot.html
 #sm.qqplot(versicolor.PetalWidth, line="s")
