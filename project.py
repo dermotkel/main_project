@@ -22,7 +22,7 @@ setosa=df[df['Name']=='Iris-setosa']
 versicolor =df[df['Name']=='Iris-versicolor']
 virginica =df[df['Name']=='Iris-virginica']
 
- Univariate Distribution
+#Univariate Distribution
 
 print(df.head())
 sns.distplot(setosa.PetalLength, norm_hist=False)
