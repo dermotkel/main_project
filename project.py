@@ -24,17 +24,18 @@ virginica =df[df['Name']=='Iris-virginica']
 
 #Univariate Distribution
 
-print(df.head())
-sns.distplot(setosa.PetalLength, norm_hist=False)
-sns.distplot(setosa.PetalWidth, norm_hist=False)
-sns.distplot(versicolor.SepalLength, norm_hist=False)
-sns.distplot(virginica.SepalLength, norm_hist=False)
-plt.show()
+#print(df.head())
+#sns.distplot(setosa.PetalLength, norm_hist=False)
+#sns.distplot(setosa.PetalWidth, norm_hist=False)
+#sns.distplot(versicolor.SepalLength, norm_hist=False)
+#sns.distplot(virginica.SepalLength, norm_hist=False)
+
 
 #qqplot also shows that the data is normally distributed http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.ProbPlot.html
-#sm.qqplot(versicolor.PetalWidth, line="s")
-#sm.qqplot(setosa.PetalWidth, line="s")
-#sm.qqplot(setosa.PetalLength, line="s")
+sm.qqplot(versicolor.PetalWidth, line="s")
+sm.qqplot(setosa.PetalWidth, line="s")
+sm.qqplot(setosa.PetalLength, line="s")
+plt.show()
 
 #print(stats.shapiro(setosa.SepalLength)) # Shapiro-wilks test for normality https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html
 #print(stats.normaltest(setosa.SepalLength))
@@ -93,4 +94,8 @@ plt.show()
 #print(tukey.summary())                                                      # http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
 #tukey.plot_simultaneous()
 
+corr = df.corr()
+sns.heatmap(corr, 
+        xticklabels=corr.columns,
+        yticklabels=corr.columns)
 plt.show()
