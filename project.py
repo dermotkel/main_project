@@ -32,10 +32,10 @@ virginica =df[df['Name']=='Iris-virginica']
 
 
 #qqplot also shows that the data is normally distributed http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.ProbPlot.html
-sm.qqplot(versicolor.PetalWidth, line="s")
-sm.qqplot(setosa.PetalWidth, line="s")
-sm.qqplot(setosa.PetalLength, line="s")
-plt.show()
+#sm.qqplot(versicolor.PetalWidth, line="s")
+#sm.qqplot(setosa.PetalWidth, line="s")
+#sm.qqplot(setosa.PetalLength, line="s")
+#plt.show()
 
 #print(stats.shapiro(setosa.SepalLength)) # Shapiro-wilks test for normality https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html
 #print(stats.normaltest(setosa.SepalLength))
@@ -95,7 +95,8 @@ plt.show()
 #tukey.plot_simultaneous()
 
 corr = df.corr()
-sns.heatmap(corr, 
-        xticklabels=corr.columns,
-        yticklabels=corr.columns)
+sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap="plasma")
 plt.show()
+
+
+
