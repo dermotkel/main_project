@@ -94,9 +94,7 @@ virginica =df[df['Name']=='Iris-virginica']
 #print(tukey.summary())                                                      # http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
 #tukey.plot_simultaneous()
 
-corr = df.corr()
-sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap="plasma")
-plt.show()
+
 
 
 
@@ -195,4 +193,11 @@ virginica =df[df['Name']=='Iris-virginica']
 #print(tukey.summary())                                                      # http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
 #tukey.plot_simultaneous()
 
+plt.show()
+
+corr = df.corr()
+print(corr)
+
+corr = df.corr()
+sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap="plasma")
 plt.show()
