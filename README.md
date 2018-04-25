@@ -67,6 +67,14 @@ A Shapiro-Wilk test of Setosa Petal length suggests that the data is normally di
 
 ![virginica_hist](https://user-images.githubusercontent.com/35706109/39269731-8a2ee68a-48cb-11e8-9d07-968a57984201.png)
 
+![virgqq](https://user-images.githubusercontent.com/35706109/39269790-bc060fee-48cb-11e8-94ac-0d851c50c31f.png)
+
+The histogram is slightly right skewed and uniform in the middle. The middle bars are of a similar height. The QQ plot suggests that it is normally distributed, though with some small deviations. 
+
+A Shapiro-Wilk test of Virginica Petal length suggests that the data is normally distributed, *w = .962, p= .110.*
+
+#### Versicolor Petal Length
+
 
 
 
