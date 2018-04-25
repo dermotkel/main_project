@@ -99,6 +99,15 @@ A Shapiro-Wilk test of Setosa petal width suggests that the data is **not** norm
 
 #### Virginica Petal Width
 
+![virpetwh](https://user-images.githubusercontent.com/35706109/39274364-a357a7ba-48d9-11e8-914c-4f47f2084013.png)
+
+![virpetwq](https://user-images.githubusercontent.com/35706109/39274369-a59e5730-48d9-11e8-866f-61e9f9782fce.png)
+
+The histogram is skewed right, but the QQ plot looks relatively straight.
+
+A Shapiro-Wilk test of Virginica petal width suggests that the data is normally distributed, *w = .960, p= .087.*
+
+#### Versicolor Petal Width
 
 
 
