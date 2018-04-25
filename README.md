@@ -46,3 +46,6 @@ The hypotheses are as follows:
 
 ## Distribution of the Data
 
+![setosapetalhist](https://user-images.githubusercontent.com/35706109/39267290-4b9029c2-48c4-11e8-95d9-30ad9b286770.png)
+
+
