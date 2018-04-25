@@ -43,3 +43,6 @@ The hypotheses are as follows:
 
 2. The sepal length of all flowers is similar.
 
+
+## Distribution of the Data
+
