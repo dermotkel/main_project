@@ -83,5 +83,10 @@ The histogram shoes a strong left-skew or tail in this variable. However, the QQ
 
 A Shapiro-Wilk test of Versicolor Petal length suggests that the data is normally distributed, *w = .966, p= .158.*
 
+As can be seen above, the petal length of all three species of Irish are normally distributed. 
+
+### Petal Width
+
+#### Setosa Petal Width
 
 
