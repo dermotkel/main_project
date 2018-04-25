@@ -157,5 +157,11 @@ The Sepal length of all flowers is normally distributed.
 The plots looks normal and the Shapiro-Wilk test of Setosa sepal width suggests that the data is normally distributed, *w = .969, p= .205.*
 
 #### Virginica Sepal Width
+![virh](https://user-images.githubusercontent.com/35706109/39275834-a84a8fbc-48de-11e8-8ecc-9dfff915f5ce.png)
 
+![virq](https://user-images.githubusercontent.com/35706109/39275838-aa632598-48de-11e8-8911-db278046c006.png)
+
+The histogram is left-skewed but the Shapiro-Wilk test of Virginica sepal width suggests that the data is normally distributed, *w = .967, p= .180.*
+
+#### Versicolor Sepal Width
 
