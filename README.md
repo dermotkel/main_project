@@ -46,6 +46,23 @@ The hypotheses are as follows:
 
 ## Distribution of the Data
 
+### Petal Length
+
+#### Setosa Petal Length
+
 ![setosapetalhist](https://user-images.githubusercontent.com/35706109/39267290-4b9029c2-48c4-11e8-95d9-30ad9b286770.png)
+
+
+![setpetalqq](https://user-images.githubusercontent.com/35706109/39267890-2050f8c0-48c6-11e8-82a2-48fb5d8b1397.png)
+
+The histograms appears to be normally distributed, though is slightly left-skewed. From the statsModel library we can also create a normal QQ plot, another usual visual tool to check if data is normally distributed. If the data is in a straight line, then the data is normally distributed.
+
+As we can see in the above QQ Plot, the Setosa petal length data follows a straight line though it does deviate at the very top and bottom.
+
+While the histogram and QQ plot suggest that it is normally distributed. Using the stats module from the Scipy library in Python, we can perform a Shapiro-Wilk test to test for normality. The null hypothese is that the data is normally distributed. In other words, if the p-value is greater than our chosen alpha value .05, then we accept the null hypotheses and the data is normally distributed. 
+
+A Shapiro-Wilk test of Setosa Petal length suggests that the data is normally distributed, *w = .955, p= .055.*
+
+#### Virginica Petal Length
 
 
