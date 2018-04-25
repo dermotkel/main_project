@@ -180,3 +180,10 @@ Above, we looked at the distribution of a single variable at a time, called univ
 Each datapoint is represented on the plot as a single line across all the dependent variables. 
 
 
+![pc](https://user-images.githubusercontent.com/35706109/39276283-550bf8f2-48e0-11e8-9203-66c60485de09.png)
+
+Starting from the left of the graph, we can see that all three species appear to have relatively similar sepal lengths and widths. Differences begin to appear, however, when it comes to the Petal variables. Setosa petal length and width is distinctly less than the others. 
+
+In the next chapter, we examine this in more detail by using plots and statistics to look at the differences between the three flower types in more details. 
+
+
