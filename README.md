@@ -75,6 +75,13 @@ A Shapiro-Wilk test of Virginica Petal length suggests that the data is normally
 
 #### Versicolor Petal Length
 
+![verpetlen](https://user-images.githubusercontent.com/35706109/39270216-47843dc4-48cd-11e8-8998-8615a323a5f7.png)
+
+![verpetlenq](https://user-images.githubusercontent.com/35706109/39270218-4a779ae4-48cd-11e8-8324-2165f844e865.png)
+
+The histogram shoes a strong left-skew or tail in this variable. However, the QQ Plot does follow a straigh line. This demonstrates why it is important to use more than one plot to examine the distribution of data. 
+
+A Shapiro-Wilk test of Versicolor Petal length suggests that the data is normally distributed, *w = .966, p= .158.*
 
 
 
