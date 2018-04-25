@@ -65,4 +65,8 @@ A Shapiro-Wilk test of Setosa Petal length suggests that the data is normally di
 
 #### Virginica Petal Length
 
+![virginica_hist](https://user-images.githubusercontent.com/35706109/39269731-8a2ee68a-48cb-11e8-9d07-968a57984201.png)
+
+
+
 
