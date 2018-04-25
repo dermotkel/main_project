@@ -89,4 +89,14 @@ As can be seen above, the petal length of all three species of Irish are normall
 
 #### Setosa Petal Width
 
+![setpetwidthhist](https://user-images.githubusercontent.com/35706109/39271696-a56221fa-48d1-11e8-94dd-ca8f4e12d056.png)
+
+![setpetwidthq](https://user-images.githubusercontent.com/35706109/39271707-abc25498-48d1-11e8-93ec-c3b53bf10473.png)
+
+The histogram demonstrates that the Setosa petal width is strongly right-skewed and may not be normally distributed. The QQ Plot is not useful as so many variables are clustered in one area of the plot. 
+
+A Shapiro-Wilk test of Setosa petal width suggests that the data is **not** normally distributed, *w = .814, p= < .000.*
+
+#### Virginica Petal Width
+
 
