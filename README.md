@@ -109,5 +109,16 @@ A Shapiro-Wilk test of Virginica petal width suggests that the data is normally 
 
 #### Versicolor Petal Width
 
+![verpetwh](https://user-images.githubusercontent.com/35706109/39274585-5fbe37fc-48da-11e8-8079-d8644137b9cd.png)
 
+![verpetwq](https://user-images.githubusercontent.com/35706109/39274588-6215df1e-48da-11e8-9394-a914335c0662.png)
 
+The histogram shoes that the variable is bimodal (has two distinct peaks)
+
+A Shapiro-Wilk test of Versicolor petal width suggests that the data is *not* normally distributed, *w = .948, p= .027.*
+
+Setosa and Versicolor petal width are not normally distributed, while Virginica is normally distributed. 
+
+### Sepal Length
+
+#### Setosa Sepal Length
