@@ -102,11 +102,3 @@ A Shapiro-Wilk test of Setosa petal width suggests that the data is **not** norm
 
 
 
-
-![verpetwh](https://user-images.githubusercontent.com/35706109/39274028-8fe5d2c0-48d8-11e8-849a-be2220743ff8.png)
-
-![verpetwq](https://user-images.githubusercontent.com/35706109/39274036-95b8202c-48d8-11e8-9ff5-4853593dccde.png)
-
-The histogram appears bimodal (with two peaks). 
-
-A Shapiro-Wilk test of Versicolor Petal length suggests that the data is normally distributed, *w = .966, p= .158.*
