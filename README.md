@@ -138,3 +138,18 @@ The plots and the Shapiro-Wilk test of Setosa sepal length suggests that the dat
 The histogram is right skewed but the Shapiro-Wilk test of Virginica sepal length suggests that the data is normally distributed, *w = .971, p= .258.*
 
 #### Versicolor Sepal Length
+
+![verhist](https://user-images.githubusercontent.com/35706109/39275472-4bb7d9d6-48dd-11e8-9d4f-f45bf6cacfaa.png)
+
+![verq](https://user-images.githubusercontent.com/35706109/39275480-4f8450e4-48dd-11e8-80bd-d2d3d4a2ad72.png)
+
+The histogram looks normal and the Shapiro-Wilk test of Versicolor sepal length suggests that the data is normally distributed, *w = .978, p= .465.*
+
+The Sepal length of all flowers is normally distributed. 
+
+### Sepal Width
+
+#### Setosa Sepal Width
+
+
+
