@@ -165,3 +165,18 @@ The histogram is left-skewed but the Shapiro-Wilk test of Virginica sepal width 
 
 #### Versicolor Sepal Width
 
+![verh](https://user-images.githubusercontent.com/35706109/39276004-5b19f9ca-48df-11e8-8c0d-a393d865eb74.png)
+
+![verq](https://user-images.githubusercontent.com/35706109/39276009-5e18127e-48df-11e8-83a4-27a7deb78c18.png)
+
+he histogram is left-skewed but the Shapiro-Wilk test of Versicolor sepal width suggests that the data is normally distributed, *w = .974, p= .338.*
+
+The sepal width of all flower types are normally distributed. 
+
+### Multivariate distribution
+
+Above, we looked at the distribution of a single variable at a time, called univariate distribution. The plot below is a Parallel Coordinates plot using Pandas visualation library. 
+
+Each datapoint is represented on the plot as a single line across all the dependent variables. 
+
+
