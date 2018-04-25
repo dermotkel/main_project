@@ -122,3 +122,11 @@ Setosa and Versicolor petal width are not normally distributed, while Virginica 
 ### Sepal Length
 
 #### Setosa Sepal Length
+
+![setpeth](https://user-images.githubusercontent.com/35706109/39275055-ce7ba4ee-48db-11e8-9518-f9c3f04fac96.png)
+
+![setpetq](https://user-images.githubusercontent.com/35706109/39275060-d1d57ec6-48db-11e8-8915-d5393c587fbb.png)
+
+The plots and the Shapiro-Wilk test of Setosa sepal length suggests that the data is normally distributed, *w = .978, p= .460.*
+
+#### Virginica Sepal Length
