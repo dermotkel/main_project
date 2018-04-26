@@ -207,5 +207,9 @@ We will now now look at each variable: Petal length, petal width, sepal length a
 
 ### Petal Length
 
+![swarmpw](https://user-images.githubusercontent.com/35706109/39328966-e6242026-4994-11e8-88d3-06b8b8e14cc2.png)
 
+The above swarmplot created using Seaborn compares the Petal length of each Flower-type by placing each datapoint on the plot. Datapoints with a similar value are places beside each other making the cluster appear wider. 
+
+The Setosa is much wider and shorter, while Virginica and Versicolor are more spread out. Setosa is clearly smaller with no overlap with the others. Virginica and Versicolor have only a slight overlap. 
 
