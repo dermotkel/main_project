@@ -219,7 +219,7 @@ The pandas dataframe.describe() functions shows us the means of petal length for
 
 The Setosa petal length seems significantly smaller than the other two flower-types. 
 
-![boxplot](https://user-images.githubusercontent.com/35706109/39331138-910478f0-499b-11e8-9411-0a534c59f377.png)
+![figure_1](https://user-images.githubusercontent.com/35706109/39333466-e6052938-49a2-11e8-911b-39a1b85a7221.png)
 
 The boxplot created using Seaborn above shows the differences between the flower-types more clearly. The black diamonds are outliers. The whiskers show the range of the data. The middle line is the medium and the box is the interquartile range (it contains the middle 50% of the data). 
 
