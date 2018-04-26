@@ -237,7 +237,7 @@ A Tukey posthoc test using Scipy will show which flowertypes are actually signif
 
 We reject the null hypothesis in all instances. So, the petal length is difference across all flower-types. 
 
-### Petal Length
+### Petal Width
 
 
 
