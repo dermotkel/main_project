@@ -265,4 +265,24 @@ A screenshot from the Tukey post-hoc test carried out with Scipy is below:
 
 We reject the null hypothesis in all instances. So, the sepal length is difference across all flower-types. 
 
-### Sepal Length
+### Sepal Width
+
+
+![sepwswarm](https://user-images.githubusercontent.com/35706109/39335995-44465d14-49ad-11e8-8eeb-747383833214.png)
+
+![sepwbar](https://user-images.githubusercontent.com/35706109/39335999-4682fa10-49ad-11e8-8aca-205cda12849f.png)
+
+![sepwbox](https://user-images.githubusercontent.com/35706109/39336002-489ce680-49ad-11e8-87e6-fe36bd70def7.png)
+
+It is interesting to note that Setosa has the widest Sepals of the three flower-types. In all other variables, it appears to be smaller. 
+
+A one-way Anova performed using Scipy shows that there is a significant difference in the sepal width between at least two two flower-types, *f = 47.3, p= <.000.*
+
+A screenshot from the Tukey post-hoc test carried out with Scipy is below:
+
+![tukey](https://user-images.githubusercontent.com/35706109/39336006-4b99d082-49ad-11e8-93c1-e63e665e9e1a.PNG)
+
+We reject the null hypothesis in all instances. So, the sepal width is difference across all flower-types. 
+
+## Correlation
+
