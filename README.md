@@ -173,6 +173,15 @@ he histogram is left-skewed but the Shapiro-Wilk test of Versicolor sepal width 
 
 The sepal width of all flower types are normally distributed. 
 
+The below tables shows if the variable is normally distributed (YES) or not normally distributed (NO).
+
+
+|   | **Petal Length** | **Petal Width**  | **Sepal Length** | **Sepal Width** |
+|---|---|---|---|---|
+| **Setosa**  | Yes  | No  | Yes  | Yes  |
+| **Virginica**   | Yes  | Yes  |Yes   | Yes  |
+| **Versicolor**  | Yes  | No  | Yes  | Yes  |
+
 ### Multivariate distribution
 
 Above, we looked at the distribution of a single variable at a time, called univariate distribution. The plot below is a Parallel Coordinates plot using Pandas visualation library. 
