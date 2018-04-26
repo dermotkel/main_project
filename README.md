@@ -213,3 +213,10 @@ The above swarmplot created using Seaborn compares the Petal length of each Flow
 
 The Setosa is much wider and shorter, while Virginica and Versicolor are more spread out. Setosa is clearly smaller with no overlap with the others. Virginica and Versicolor have only a slight overlap. 
 
+The pandas dataframe.describe() functions shows us the means of petal length for Setosa (1.46cm), Versicolor (4.26cm) and Virginica (5.55cm). This is demonstrated in the barplot made using Seaborn below:
+
+![barplot](https://user-images.githubusercontent.com/35706109/39329947-d823d1e4-4997-11e8-9ad4-c3c05de12249.png)
+
+The Setosa petal length seems significantly smaller than the other two flower-types. 
+
+
