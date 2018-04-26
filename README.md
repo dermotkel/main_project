@@ -229,12 +229,15 @@ A Levene's test shows that petal length does not meet the homogenity of variance
 
 However, Anova is robust if this assumption is not met if the size of the groups are equal (Statistics Solutions, nd.). All of our groups have 50 datapoints. We will, therefore, use ANOVA with the above caveat and primarily to show how it works in Python. 
 
-A one-way Anova performed using Scipy shows that there is a significant difference in the Petal Length between at least two two flower-types, *f = 1179, p= <.000.*
+A one-way Anova performed using Scipy shows that there is a significant difference in the petal length between at least two two flower-types, *f = 1179, p= <.000.*
 
 A Tukey posthoc test using Scipy will show which flowertypes are actually significantly different. The null hypothesis is that all flwer-types are equal. I include a screenshot from the output below:
 
+![tukey](https://user-images.githubusercontent.com/35706109/39333292-42766d2c-49a2-11e8-8163-9caad8b49284.PNG)
 
+We reject the null hypothesis in all instances. So, the petal length is difference across all flower-types. 
 
+### Petal Length
 
 
 
