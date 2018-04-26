@@ -219,4 +219,22 @@ The pandas dataframe.describe() functions shows us the means of petal length for
 
 The Setosa petal length seems significantly smaller than the other two flower-types. 
 
+![boxplot](https://user-images.githubusercontent.com/35706109/39331138-910478f0-499b-11e8-9411-0a534c59f377.png)
+
+The boxplot created using Seaborn above shows the differences between the flower-types more clearly. The black diamonds are outliers. The whiskers show the range of the data. The middle line is the medium and the box is the interquartile range (it contains the middle 50% of the data). 
+
+We will now perform a one-way ANOVA test to see if these differences we can observe are statistically significant. The one-way has several assumptions (Laerd Statistics, n.d.). Our data is continuos. As we saw in the last chapter, the petal length is normally distributed. Finally, there should be a homogeneity of variances which we can test by performing a Levene's test using Scipy. The null hypotheses is that there is a homogenity of variances. So we reject the null hypotheses if the p-value is less than our alpha-value pf .05.
+
+A Levene's test shows that petal length does not meet the homogenity of variances assumption, *f = 19.72, p= <.000.*
+
+However, Anova is robust if this assumption is not met if the size of the groups are equal (Statistics Solutions, nd.). All of our groups have 50 datapoints. We will, therefore, use ANOVA with the above caveat and primarily to show how it works in Python. 
+
+A one-way Anova performed using Scipy shows that there is a significant difference in the Petal Length between at least two two flower-types, *f = 1179, p= <.000.*
+
+A Tukey posthoc test using Scipy will show which flowertypes are actually significantly different. The null hypothesis is that all flwer-types are equal. I include a screenshot from the output below:
+
+
+
+
+
 
