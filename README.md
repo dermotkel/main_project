@@ -46,6 +46,12 @@ The hypotheses are as follows:
 
 ## Distribution of the Data
 
+The normal distribution is an important concept in data analysis. A histogram representing a normal distribution will have a similar mean and median. It will also be symmetrical. A normal distribution should look like a bell-curve: 
+
+![Bellcurve](https://ds055uzetaobb.cloudfront.net/image_optimizer/1dbcc5a80e3fb541aa4678fcff58bb26ca717902.png "Bell Curve")
+
+If a variable has a normal distribution, we may be able to use parametric statistical tests. If it is not normally distributed, we can only use non-parametric tests.
+
 ### Petal Length
 
 #### Setosa Petal Length
