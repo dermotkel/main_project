@@ -201,4 +201,11 @@ Starting from the left of the graph, we can see that all three species appear to
 
 In the next chapter, we examine this in more detail by using plots and statistics to look at the differences between the three flower types in more details. 
 
+## Differences between Flower Types
+
+We will now now look at each variable: Petal length, petal width, sepal length and sepal width and see if there are differences between the flower types. We will use plots and statistical analysis. 
+
+### Petal Length
+
+
 
