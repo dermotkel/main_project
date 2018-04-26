@@ -231,7 +231,7 @@ However, Anova is robust if this assumption is not met if the size of the groups
 
 A one-way Anova performed using Scipy shows that there is a significant difference in the petal length between at least two two flower-types, *f = 1179, p= <.000.*
 
-A Tukey posthoc test using Scipy will show which flowertypes are actually significantly different. The null hypothesis is that all flwer-types are equal. I include a screenshot from the output below:
+A Tukey posthoc test using Scipy will show which flowertypes are actually significantly different. The null hypothesis is that all flower-types are equal. I include a screenshot from the output below:
 
 ![tukey](https://user-images.githubusercontent.com/35706109/39333292-42766d2c-49a2-11e8-8163-9caad8b49284.PNG)
 
@@ -239,5 +239,12 @@ We reject the null hypothesis in all instances. So, the petal length is differen
 
 ### Petal Width
 
+![petalwidthswarm](https://user-images.githubusercontent.com/35706109/39334087-28b71d98-49a5-11e8-9fd8-526f60b9e0ea.png)
 
+![petalwidthbar](https://user-images.githubusercontent.com/35706109/39334090-2da7e68e-49a5-11e8-97f5-a27bfc76e289.png)
 
+![petalwithbox](https://user-images.githubusercontent.com/35706109/39334095-3087fd30-49a5-11e8-9e1e-e4e5e9216c95.png)
+
+The above three plots show, again, that the Setosa seems significantly different to the other flower-types. The others overlap to a small degree. 
+
+As seen in the previous chapter, two of the three petal width variables are not normally distributed. Therefore, we have to use the non-parametric alternative to the ANOVA, called the Kruskal-Wallis Test using Scipy. The test finds that at least one of the flower-types is significantly different to another *χ2 = 131, p = <.000*. At this stage, we would normally use a post-hoc Dunn's test to check which of the flower-types are different. This is not easily implemented in Python at present. 
