@@ -250,3 +250,17 @@ The above three plots show, again, that the Setosa seems significantly different
 As seen in the previous chapter, two of the three petal width variables are not normally distributed. Therefore, we have to use the non-parametric alternative to the ANOVA, called the Kruskal-Wallis Test using Scipy. The test finds that at least one of the flower-types is significantly different to another *χ2 = 131, p = <.000*. At this stage, we would normally use a post-hoc Dunn's test to check which of the flower-types are different. This is not easily implemented in Python at present. 
 
 ### Sepal Length
+
+![seplswarm](https://user-images.githubusercontent.com/35706109/39335263-36d1511e-49aa-11e8-833b-401aea163aeb.png)
+
+![seplenbar](https://user-images.githubusercontent.com/35706109/39335270-3c7f0926-49aa-11e8-8322-2564a2083b93.png)
+
+![seplbox](https://user-images.githubusercontent.com/35706109/39335275-3f991732-49aa-11e8-8132-ee6d7c39344b.png)
+
+A one-way Anova performed using Scipy shows that there is a significant difference in the sepal length between at least two two flower-types, *f = 119, p= <.000.*
+
+A screenshot from the Tukey post-hoc test carried out with Scipy is below:
+
+![tukey](https://user-images.githubusercontent.com/35706109/39333292-42766d2c-49a2-11e8-8163-9caad8b49284.PNG)
+
+We reject the null hypothesis in all instances. So, the sepal length is difference across all flower-types. 
