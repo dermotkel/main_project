@@ -248,3 +248,5 @@ We reject the null hypothesis in all instances. So, the petal length is differen
 The above three plots show, again, that the Setosa seems significantly different to the other flower-types. The others overlap to a small degree. 
 
 As seen in the previous chapter, two of the three petal width variables are not normally distributed. Therefore, we have to use the non-parametric alternative to the ANOVA, called the Kruskal-Wallis Test using Scipy. The test finds that at least one of the flower-types is significantly different to another *χ2 = 131, p = <.000*. At this stage, we would normally use a post-hoc Dunn's test to check which of the flower-types are different. This is not easily implemented in Python at present. 
+
+### Sepal Length
