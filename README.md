@@ -261,6 +261,8 @@ A one-way Anova performed using Scipy shows that there is a significant differen
 
 A screenshot from the Tukey post-hoc test carried out with Scipy is below:
 
-![tukey](https://user-images.githubusercontent.com/35706109/39333292-42766d2c-49a2-11e8-8163-9caad8b49284.PNG)
+![tukey](https://user-images.githubusercontent.com/35706109/39335709-144f9450-49ac-11e8-8c15-fc7fab068ecb.PNG)
 
 We reject the null hypothesis in all instances. So, the sepal length is difference across all flower-types. 
+
+### Sepal Length
