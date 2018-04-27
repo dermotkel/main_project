@@ -1,25 +1,26 @@
 # Project 2018 Programming and Scripting
 
-## Introduction
+# Table of Contents
 
-A new data analysis team is being created in our company and my manager has tasked me with training the new team members. The purpose of this study is to introduce my colleagues to the core concepts of data analysis with Python by performing an analysis of the famous Iris Data using key python libraries, such as Pandas, Seaborn and Scipy. This study will demonstrate how to perform statistical analysis and data visualisation. We will analyse the Iris Dataset by focusing on the following ststistical concepts: The distribution of data, measures of central tendency, measures of variability and correlation 
+- [1. Introduction](https://github.com/dermotkel/main_project/blob/master/README.md#introduction)
+  - [1.1 The Iris Dataset](https://github.com/dermotkel/main_project/blob/master/README.md#iris-data-set)
+  - [1.2 Variables](https://github.com/dermotkel/main_project/blob/master/README.md#iris-data-set)
 
-In the next sections, we will introduce the Iris Dataset, formulate our research questions and hypothesis 
+## 1. Introduction
 
-### Iris Data Set
+A new data analysis team is being created in our company and my manager has tasked me with training the new team members. The purpose of this study is to introduce my colleagues to the core concepts of data analysis with Python by performing an analysis of the famous Iris Dataset using key python libraries, such as Pandas, Seaborn and Scipy. This study will demonstrate how to perform statistical analysis and data visualisation. We will analyse the Iris Dataset by investigating the following: The distribution of data, differences between the independent variables and correlation between variables. 
 
-The Data set contains information on the Sepal width/length and Petal width/length of three species of the Iris flower. 
+### 1.1 Iris Dataset
 
-### Variables
+There are 150 data points in the Iris dataset: 50 for each species of Iris. It contains 5 variables. 'Name' is a categorical variable which denotes the different species of Iris. It has three levels: Setosa, Virginica and Versicolor. There are four ratio variables (all measured in centimetres): Petal height, petal width, sepal height and sepal width (Dua, D. and Karra Taniskidou, n.d.).
 
-There are 150 data points in the Iris dataset: 50 for each flower type and it contains 5 variables. 'Name' is a categorical variable which denotes the different flower types. It has three levels: Setosa, Virginica and Versicolor. There are 150 data points in the set: 50 for each flowertype. There are four ratio variables (all measured in centimetres): Petal height, petal width, sepal height and sepal width.
+### 1.2 Variables
 
+The independent variable is the Name categorical variable with its four levels: Setosa, Virginica and Setosa. This is also called a Predictor variable. We want to observe how the other variables in the study are affected by the independent variables. 
 
-The independent variable is the Name categorical variable. This is also called a Predictor variable. We want to observe how the other variables in the study are affected by the indepdent variable. 
+The four ratio variables outlined above are the depedent variables in this study (also called outcome variables). These are the variables that we expect may be affected or changed by the indepdent variables (Laerd statistics, n.d.). 
 
-The four ratio variables outlined above are the depedent variables in this study (also called outcome variables). These are the variables that we expect may be affected or changed by the indepdent variable (the flower types) # https://statistics.laerd.com/statistical-guides/types-of-variable.php
-
-### Research Questions and Hypotheses
+### 1.3 Research Questions and Hypotheses
 1. Are the three flower types normally distributed across all depdent variables?
 
 2. What is the difference in Sepal length/width and petal length/width between the three flower types?
