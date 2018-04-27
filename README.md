@@ -21,12 +21,10 @@ The four ratio variables outlined above are the depedent variables in this study
 
 ### Research Questions and Hypotheses
 1. Are the three flower types normally distributed across all depdent variables?
-2. What is the difference in Sepal length between the three flower types?
-3. What is the difference in Sepal width between the three flower types?
-4. What is the difference in Petal width between the three flower types?
-5. What is the difference in Petal height between the three flower types?
 
-6. Is there a postive correlation between Sepal Length and Petal Height?
+2. What is the difference in Sepal length/width and petal length/width between the three flower types?
+
+3. Is there a postive correlation between Sepal Length and Petal Length?
 
 We shall also make some hypotheses. A hypothese is simply an 'educated quess' we make at the beginning of a study on what we expect to find. http://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/
 
@@ -39,9 +37,9 @@ The above picture is not perfect, of course, as they are not all taken from the 
 
 The hypotheses are as follows: 
 
-1. The petal width and petal length of the Setosa is significantly smaller that the other flowers. 
+4. The petal width and petal length of the Setosa is significantly smaller that the other flowers. 
 
-2. The sepal length of all flowers is similar.
+5. The sepal length of all flowers is similar.
 
 
 ## Distribution of the Data
@@ -286,3 +284,56 @@ We reject the null hypothesis in all instances. So, the sepal width is differenc
 
 ## Correlation
 
+Finally, we will look at correlation between variables within the dataset. Correlation looks at the relationship between two variables. It is measured on a scale from -1 to 1. A correlation of - 1 means that the two variables have a perfect negative linear relationship. In other words, if one variable increases, the other will always decrease. If they have a correlation of 1, they have a perfect positive linear relationship. They move in the same direction. A correlation of 0 means that there is no relationship. 
+
+The pandas .corr() function gives the Pearson Correlation coefficent of the dataset. The output is below: 
+
+![capture](https://user-images.githubusercontent.com/35706109/39337337-53a0feac-49b4-11e8-93c3-2e7a9cee2711.PNG)
+
+It should be noted, however, that the Pearson's r is a parametric test. It requires that the two variables are normally distributed. If the variables do not meet this requirment, we have to use a non-parametric test, such as Spearman's rho. As we are comparing the variables without differentiating them by their species, we have not checked if they are normally distributed. 
+
+We could perform an analysis as we did in the earlier chapter. However, below i will show a Correlation Matrix Heatmap showing the Pearson's r and Spearman's rho correlations of the data. You will see that both results are similar, though the non-parametric shows a slightly weaker correlation.
+
+![pearson](https://user-images.githubusercontent.com/35706109/39337334-4e8e7d90-49b4-11e8-8f13-ba418f16ce89.png)
+
+![spearman](https://user-images.githubusercontent.com/35706109/39337346-5b2092dc-49b4-11e8-8d0f-706aa1496658.png)
+
+
+It is interesting that there is a strong positive correlation between petal length and petal width. Flowers with longer petals also have wider petals. However, there is appears to be no linear relationship between sepal length and sepal width. 
+
+We can also see that there is a strong positive correlation between petal length and sepal length. This relationship is also shown clearly in the jointplot created with Seaborn below. Spearman's rho is used as the Petal Length histogram is bimodal and may not be normally distributed.
+
+![jointplot](https://user-images.githubusercontent.com/35706109/39337352-63d6a614-49b4-11e8-8301-bddaf98ffc65.png)
+
+## Results
+
+We will now answer the research questions and hypotheses posed in the introduction. 
+
+**1.Are the three flower types normally distributed across all depdent variables?**
+
+|   | **Petal Length** | **Petal Width**  | **Sepal Length** | **Sepal Width** |
+|---|---|---|---|---|
+| **Setosa**  | Yes  | No  | Yes  | Yes  |
+| **Virginica**   | Yes  | Yes  |Yes   | Yes  |
+| **Versicolor**  | Yes  | No  | Yes  | Yes  |
+
+The chart above shoes that all flower types are normally distributed except for Setosa petal width and Versicolor petal width.
+
+**2. What is the difference in Sepal length/width and petal length/width between the three flower types?**
+
+![pc](https://user-images.githubusercontent.com/35706109/39276283-550bf8f2-48e0-11e8-9203-66c60485de09.png)
+
+virginica has the longest and widest petals, followest by Versicolor. Setosa has the smallest.
+
+Virginica has the longest sepals, followed by versicolor and then Setosa, but the differences are smaller. interestingly, Setosa have the widest sepals followed closely by Virginica and finally Versicolor.
+
+**3. Is there a postive correlation between Sepal Length and Petal Length?**
+
+![jointplot](https://user-images.githubusercontent.com/35706109/39337352-63d6a614-49b4-11e8-8301-bddaf98ffc65.png)
+
+There is a strong positive correlation between sepal length and petal length
+
+
+4. The petal width and petal length of the Setosa is significantly smaller that the other flowers. 
+
+5. The sepal length of all flowers is similar.
