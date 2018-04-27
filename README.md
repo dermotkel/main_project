@@ -21,29 +21,37 @@ The independent variable is the Name categorical variable with its four levels: 
 The four ratio variables outlined above are the depedent variables in this study (also called outcome variables). These are the variables that we expect may be affected or changed by the indepdent variables (Laerd statistics, n.d.). 
 
 ### 1.3 Research Questions and Hypotheses
-1. Are the three flower types normally distributed across all depdent variables?
 
-2. What is the difference in Sepal length/width and petal length/width between the three flower types?
+In this section we will lay out some research questions. These will be the focus of the srudy. We will answer each one in the Results chapter of this study. 
 
-3. Is there a postive correlation between Sepal Length and Petal Length?
+1. Are the three species normally distributed across all dependent variables?
 
-We shall also make some hypotheses. A hypothese is simply an 'educated quess' we make at the beginning of a study on what we expect to find. http://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/
+2. Is there a significant difference between the the three species in terms of petal length, petal width, sepal length and sepal width ?
 
-A good way of making a hypothese is by visually inspecting the data and making predictions. Firstly, it is important to find out the differences between a Sepal and a Petal. The Sepal is on the outside and the petal is on the inside, closer to the centre of the flower. The below sideview of an Iris shows the difference clearly. 
+3. Is there a postive correlation between sepal length and petal length?
+
+We shall also make some hypotheses about the Iris Dataset. A hypothesis is simply an 'educated quess' we make at the beginning of a study on what we expect to find (Statistics How To, n.d.).
+
+A effective way of making a hypothesis is by visually inspecting the data and making predictions. Firstly, it is important to find out the differences between a sepal and a petal. The sepal is on the outside and the petal is on the inside, closer to the centre of the flower. The below sideview of an Iris shows the difference clearly. 
 
 ![SepalPetal](https://raw.githubusercontent.com/ritchieng/machine-learning-dataschool/master/images/03_iris.png "Sepal and Petal")
 
 ![irisflowers](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Machine+Learning+R/iris-machinelearning.png "Iris Flowers")
-The above picture is not perfect, of course, as they are not all taken from the same distance/postion. It is therefore, difficult to judge differences in size. However, we can make the following observations: The petals on the Setosa appear to be significantly smaller than the other flowers. The Sepals appear to be of a similar length across all of the flower. 
+
+The above picture is not perfect, of course, as they are not all taken from the same distance/postion. It is therefore, difficult to judge differences in size. However, we can make the following observations: The petals on the Setosa appear to be significantly smaller than the other species. The sepals appear to be of a similar length for each of the species. 
 
 The hypotheses are as follows: 
 
-4. The petal width and petal length of the Setosa is significantly smaller that the other flowers. 
+4. The petal width and petal length of the Setosa are significantly smaller than the other species. 
 
-5. The sepal length of all flowers is similar.
+5. The sepal length of all species is similar.
+
+In the next chapter, we will examine the distribution of each flower species across each of the four dependent variables. In chapter three we will examine differences between the Iris Species. In chapter four, we will look for correlation in the Iris dataset. Finally, in chapter five, we will present our results. 
+
+The Python code used in this study is available in the project.py file in this repository. Start at the beginning of the file. The relevant code is grouped under the corresponding chapter heading. 
 
 
-## Distribution of the Data
+## 2. Distribution of the Data
 
 The normal distribution is an important concept in data analysis. A histogram representing a normal distribution will have a similar mean and median. It will also be symmetrical. A normal distribution should look like a bell-curve: 
 
@@ -51,48 +59,52 @@ The normal distribution is an important concept in data analysis. A histogram re
 
 If a variable has a normal distribution, we may be able to use parametric statistical tests. If it is not normally distributed, we can only use non-parametric tests.
 
-### Petal Length
+We will now examine the distribution of all dependent variables across all species. Histograms and QQ Plots will be created to visually inspect the data. A histogram divides the continuous variable into bins at equal intervals. The height of each bin indicates the count of datapoints in it. Intervals with more datapoints are then higher. 
 
-#### Setosa Petal Length
+A QQ Plot plots each datapoint along a line. If the variables are tightly clustered around the line, the variable is normally distributed. The QQ Plot is created using the Statsmodels library and the Histogram is created using the Seaborn library. We will also use the Scipy library to perform a Shapiro-Wilk test for normality. 
+
+### 2.1 Petal Length Distribution
+
+#### 2.1.1 Setosa Petal Length
 
 ![setosapetalhist](https://user-images.githubusercontent.com/35706109/39267290-4b9029c2-48c4-11e8-95d9-30ad9b286770.png)
 
 
 ![setpetalqq](https://user-images.githubusercontent.com/35706109/39267890-2050f8c0-48c6-11e8-82a2-48fb5d8b1397.png)
 
-The histograms appears to be normally distributed, though is slightly left-skewed. From the statsModel library we can also create a normal QQ plot, another usual visual tool to check if data is normally distributed. If the data is in a straight line, then the data is normally distributed.
+The histogram appears to be normally distributed, though is slightly left-skewed. From the statsmodel library we can also create a normal QQ plot, another usual visual tool to check if data is normally distributed. If the data is in a straight line, then the data is normally distributed.
 
 As we can see in the above QQ Plot, the Setosa petal length data follows a straight line though it does deviate at the very top and bottom.
 
-While the histogram and QQ plot suggest that it is normally distributed. Using the stats module from the Scipy library in Python, we can perform a Shapiro-Wilk test to test for normality. The null hypothese is that the data is normally distributed. In other words, if the p-value is greater than our chosen alpha value .05, then we accept the null hypotheses and the data is normally distributed. 
+While the histogram and QQ plot suggest that it is normally distributed. Using the stats module from the Scipy library in Python, we can perform a Shapiro-Wilk test to test for normality. The null hypothesis is that the data is normally distributed. In other words, if the p-value is greater than our chosen alpha value .05, then we accept the null hypotheses and the data is normally distributed. 
 
-A Shapiro-Wilk test of Setosa Petal length suggests that the data is normally distributed, *w = .955, p= .055.*
+A Shapiro-Wilk test of Setosa petal length suggests that the data is normally distributed, *w = .955, p= .055.*
 
-#### Virginica Petal Length
+#### 2.1.2 Virginica Petal Length
 
 ![virginica_hist](https://user-images.githubusercontent.com/35706109/39269731-8a2ee68a-48cb-11e8-9d07-968a57984201.png)
 
 ![virgqq](https://user-images.githubusercontent.com/35706109/39269790-bc060fee-48cb-11e8-94ac-0d851c50c31f.png)
 
-The histogram is slightly right skewed and uniform in the middle. The middle bars are of a similar height. The QQ plot suggests that it is normally distributed, though with some small deviations. 
+The histogram is slightly right-skewed and uniform in the middle. The middle bars are of a similar height. The QQ plot suggests that it is normally distributed, though with some small deviations. 
 
-A Shapiro-Wilk test of Virginica Petal length suggests that the data is normally distributed, *w = .962, p= .110.*
+A Shapiro-Wilk test of Virginica petal length suggests that the data is normally distributed, *w = .962, p= .110.*
 
-#### Versicolor Petal Length
+#### 2.1.3 Versicolor Petal Length
 
 ![verpetlen](https://user-images.githubusercontent.com/35706109/39270216-47843dc4-48cd-11e8-8998-8615a323a5f7.png)
 
 ![verpetlenq](https://user-images.githubusercontent.com/35706109/39270218-4a779ae4-48cd-11e8-8324-2165f844e865.png)
 
-The histogram shoes a strong left-skew or tail in this variable. However, the QQ Plot does follow a straigh line. This demonstrates why it is important to use more than one plot to examine the distribution of data. 
+The histogram shows a strong left-skew or tail in this variable. However, the QQ Plot does follow a straight line. This demonstrates why it is important to use more than one plot to examine the distribution of data. 
 
-A Shapiro-Wilk test of Versicolor Petal length suggests that the data is normally distributed, *w = .966, p= .158.*
+A Shapiro-Wilk test of Versicolor petal length suggests that the data is normally distributed, *w = .966, p= .158.*
 
-As can be seen above, the petal length of all three species of Irish are normally distributed. 
+As can be seen above, the petal length of all three species of Iris are normally distributed. 
 
-### Petal Width
+### 2.2 Petal Width Distribution
 
-#### Setosa Petal Width
+#### 2.2.1 Setosa Petal Width
 
 ![setpetwidthhist](https://user-images.githubusercontent.com/35706109/39271696-a56221fa-48d1-11e8-94dd-ca8f4e12d056.png)
 
@@ -102,7 +114,7 @@ The histogram demonstrates that the Setosa petal width is strongly right-skewed 
 
 A Shapiro-Wilk test of Setosa petal width suggests that the data is **not** normally distributed, *w = .814, p= < .000.*
 
-#### Virginica Petal Width
+#### 2.2.2 Virginica Petal Width
 
 ![virpetwh](https://user-images.githubusercontent.com/35706109/39274364-a357a7ba-48d9-11e8-914c-4f47f2084013.png)
 
@@ -112,21 +124,21 @@ The histogram is skewed right, but the QQ plot looks relatively straight.
 
 A Shapiro-Wilk test of Virginica petal width suggests that the data is normally distributed, *w = .960, p= .087.*
 
-#### Versicolor Petal Width
+#### 2.2.3 Versicolor Petal Width
 
 ![verpetwh](https://user-images.githubusercontent.com/35706109/39274585-5fbe37fc-48da-11e8-8079-d8644137b9cd.png)
 
 ![verpetwq](https://user-images.githubusercontent.com/35706109/39274588-6215df1e-48da-11e8-9394-a914335c0662.png)
 
-The histogram shoes that the variable is bimodal (has two distinct peaks)
+The histogram shows that the variable is bimodal (has two distinct peaks) and may not be normally distributed.
 
 A Shapiro-Wilk test of Versicolor petal width suggests that the data is *not* normally distributed, *w = .948, p= .027.*
 
-Setosa and Versicolor petal width are not normally distributed, while Virginica is normally distributed. 
+Setosa and Versicolor petal widths are not normally distributed, while Virginica is normally distributed. 
 
-### Sepal Length
+### 2.3 Sepal Length Distribution
 
-#### Setosa Sepal Length
+#### 2.3.1 Setosa Sepal Length
 
 ![setpeth](https://user-images.githubusercontent.com/35706109/39275055-ce7ba4ee-48db-11e8-9518-f9c3f04fac96.png)
 
@@ -134,15 +146,15 @@ Setosa and Versicolor petal width are not normally distributed, while Virginica 
 
 The plots and the Shapiro-Wilk test of Setosa sepal length suggests that the data is normally distributed, *w = .978, p= .460.*
 
-#### Virginica Sepal Length
+#### 2.3.2 Virginica Sepal Length
 
 ![virpetlh](https://user-images.githubusercontent.com/35706109/39275249-92c3f6da-48dc-11e8-8e24-64f56c695bb9.png)
 
 ![virpetlq](https://user-images.githubusercontent.com/35706109/39275255-94f87e12-48dc-11e8-8673-6f5d871739dd.png)
 
-The histogram is right skewed but the Shapiro-Wilk test of Virginica sepal length suggests that the data is normally distributed, *w = .971, p= .258.*
+The histogram is right-skewed but the Shapiro-Wilk test of Virginica sepal length suggests that the data is normally distributed, *w = .971, p= .258.*
 
-#### Versicolor Sepal Length
+#### 2.3.3 Versicolor Sepal Length
 
 ![verhist](https://user-images.githubusercontent.com/35706109/39275472-4bb7d9d6-48dd-11e8-9d4f-f45bf6cacfaa.png)
 
@@ -150,25 +162,25 @@ The histogram is right skewed but the Shapiro-Wilk test of Virginica sepal lengt
 
 The histogram looks normal and the Shapiro-Wilk test of Versicolor sepal length suggests that the data is normally distributed, *w = .978, p= .465.*
 
-The Sepal length of all flowers is normally distributed. 
+The Sepal length of all species is normally distributed. 
 
-### Sepal Width
+### 2.4 Sepal Width
 
-#### Setosa Sepal Width
+#### 2.4.1 Setosa Sepal Width
 ![setsep](https://user-images.githubusercontent.com/35706109/39275679-0b92a790-48de-11e8-9d46-9cddd7b2f07a.png)
 
 ![setsepq](https://user-images.githubusercontent.com/35706109/39275683-0ddedb7c-48de-11e8-89d4-daa96cd3aa2c.png)
 
-The plots looks normal and the Shapiro-Wilk test of Setosa sepal width suggests that the data is normally distributed, *w = .969, p= .205.*
+The plots look normal and the Shapiro-Wilk test of Setosa sepal width suggests that the data is normally distributed, *w = .969, p= .205.*
 
-#### Virginica Sepal Width
+#### 2.4.2 Virginica Sepal Width
 ![virh](https://user-images.githubusercontent.com/35706109/39275834-a84a8fbc-48de-11e8-8ecc-9dfff915f5ce.png)
 
 ![virq](https://user-images.githubusercontent.com/35706109/39275838-aa632598-48de-11e8-8911-db278046c006.png)
 
 The histogram is left-skewed but the Shapiro-Wilk test of Virginica sepal width suggests that the data is normally distributed, *w = .967, p= .180.*
 
-#### Versicolor Sepal Width
+#### 2.4.3 Versicolor Sepal Width
 
 ![verh](https://user-images.githubusercontent.com/35706109/39276004-5b19f9ca-48df-11e8-8c0d-a393d865eb74.png)
 
@@ -176,7 +188,7 @@ The histogram is left-skewed but the Shapiro-Wilk test of Virginica sepal width 
 
 he histogram is left-skewed but the Shapiro-Wilk test of Versicolor sepal width suggests that the data is normally distributed, *w = .974, p= .338.*
 
-The sepal width of all flower types are normally distributed. 
+The sepal width of all species are normally distributed. 
 
 The below tables shows if the variable is normally distributed (YES) or not normally distributed (NO).
 
@@ -187,40 +199,39 @@ The below tables shows if the variable is normally distributed (YES) or not norm
 | **Virginica**   | Yes  | Yes  |Yes   | Yes  |
 | **Versicolor**  | Yes  | No  | Yes  | Yes  |
 
-### Multivariate distribution
+### 2.5 Multivariate Distribution
 
 Above, we looked at the distribution of a single variable at a time, called univariate distribution. The plot below is a Parallel Coordinates plot using Pandas visualation library. 
 
 Each datapoint is represented on the plot as a single line across all the dependent variables. 
 
-
 ![pc](https://user-images.githubusercontent.com/35706109/39276283-550bf8f2-48e0-11e8-9203-66c60485de09.png)
 
-Starting from the left of the graph, we can see that all three species appear to have relatively similar sepal lengths and widths. Differences begin to appear, however, when it comes to the Petal variables. Setosa petal length and width is distinctly less than the others. 
+Starting from the left of the plot, we can see that all three species appear to have relatively similar sepal lengths and widths. Differences begin to appear, however, when it comes to the petal variables. Setosa petal length and width is distinctly less than the others. 
 
-In the next chapter, we examine this in more detail by using plots and statistics to look at the differences between the three flower types in more details. 
+In the next chapter, we examine this in more detail by using plots and statistics to look at the differences between the three species in more detail. 
 
-## Differences between Flower Types
+## 3 Differences between species
 
-We will now now look at each variable: Petal length, petal width, sepal length and sepal width and see if there are differences between the flower types. We will use plots and statistical analysis. 
+We will now now look at each variable: Petal length, petal width, sepal length and sepal width and see if there are differences between the species. We will use plots and statistical analysis. 
 
-### Petal Length
+### 3.1 Petal Length
 
 ![swarmpw](https://user-images.githubusercontent.com/35706109/39328966-e6242026-4994-11e8-88d3-06b8b8e14cc2.png)
 
-The above swarmplot created using Seaborn compares the Petal length of each Flower-type by placing each datapoint on the plot. Datapoints with a similar value are places beside each other making the cluster appear wider. 
+The above swarmplot created using Seaborn compares the petal length of each species by placing each datapoint on the plot. Datapoints with a similar value are places beside each other making the cluster appear wider. 
 
-The Setosa is much wider and shorter, while Virginica and Versicolor are more spread out. Setosa is clearly smaller with no overlap with the others. Virginica and Versicolor have only a slight overlap. 
+The Setosa is much wider and shorter, while Virginica and Versicolor are more disperse. Setosa is clearly smaller with no overlap with the others. Virginica and Versicolor have only a slight overlap. 
 
 The pandas dataframe.describe() functions shows us the means of petal length for Setosa (1.46cm), Versicolor (4.26cm) and Virginica (5.55cm). This is demonstrated in the barplot made using Seaborn below:
 
 ![barplot](https://user-images.githubusercontent.com/35706109/39329947-d823d1e4-4997-11e8-9ad4-c3c05de12249.png)
 
-The Setosa petal length seems significantly smaller than the other two flower-types. 
+The Setosa petal length seems significantly smaller than the other two species. 
 
 ![figure_1](https://user-images.githubusercontent.com/35706109/39333466-e6052938-49a2-11e8-911b-39a1b85a7221.png)
 
-The boxplot created using Seaborn above shows the differences between the flower-types more clearly. The black diamonds are outliers. The whiskers show the range of the data. The middle line is the medium and the box is the interquartile range (it contains the middle 50% of the data). 
+The boxplot created using Seaborn above shows the differences between the species more clearly. The black diamonds are outliers. The whiskers show the range of the data. The middle line is the medium and the box is the interquartile range (it contains the middle 50% of the data). 
 
 We will now perform a one-way ANOVA test to see if these differences we can observe are statistically significant. The one-way has several assumptions (Laerd Statistics, n.d.). Our data is continuos. As we saw in the last chapter, the petal length is normally distributed. Finally, there should be a homogeneity of variances which we can test by performing a Levene's test using Scipy. The null hypotheses is that there is a homogenity of variances. So we reject the null hypotheses if the p-value is less than our alpha-value pf .05.
 
