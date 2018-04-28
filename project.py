@@ -12,246 +12,205 @@ from pandas.plotting import andrews_curves
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
-from pandas.plotting import lag_plot
-from pandas.plotting import radviz
 from pandas.plotting import parallel_coordinates
 
 
-# get the iris data set directly from the below url. It includes headers
+# get the iris data set directly from the below url. It includes headers.
 iris_url='https://raw.githubusercontent.com/pandas-dev/pandas/master/pandas/tests/data/iris.csv'
-# pandas read csv from URL: http://cmdlinetips.com/2018/01/7-tips-to-read-a-csv-file-as-pandas-data-frame/
+# pandas read csv from URL. Cite: http://cmdlinetips.com/2018/01/7-tips-to-read-a-csv-file-as-pandas-data-frame/
 df = pd.read_csv(iris_url)
-#divide the dataset into three new dataframes - https://www.kaggle.com/abhishekkrg/python-iris-data-visualization-and-explanation
+
+# divide the dataset into three new dataframes by their species. Yhis makes comparisons easier. Cite: https://www.kaggle.com/abhishekkrg/python-iris-data-visualization-and-explanation
 
 setosa=df[df['Name']=='Iris-setosa']
 versicolor =df[df['Name']=='Iris-versicolor']
 virginica =df[df['Name']=='Iris-virginica']
 
 
-#Setosa Petal Length distribution
+# 2.1.1 Setosa Petal Length 
 
-#sns.distplot(setosa.PetalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkred", linewidth=.5)) # https://stackoverflow.com/questions/43080259/no-outlines-on-bins-of-matplotlib-histograms-or-seaborn-distplots
+# Shoes how to make outlines on the bins. Cite: https://stackoverflow.com/questions/43080259/no-outlines-on-bins-of-matplotlib-histograms-or-seaborn-distplots
+sns.distplot(setosa.PetalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkred", linewidth=.5)) 
+plt.title('Fig. 1. Setosa Petal Length Histogram')
+plt.xlabel('Petal Length in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#plt.title('Fig. 1. Setosa Petal Length Histogram')
-#plt.xlabel('Petal Length in cm')
-#plt.ylabel('Frequency')
+# QQ Plot created using Statsmodels. Cite: http://www.statsmodels.org/dev/generated/statsmodels.graphics.gofplots.qqplot.html
+sm.qqplot(setosa.PetalLength, line="s")
+plt.title('Fig 2. Setosa Petal Length Normal QQ Plot')
+plt.show()
 
+# A Shapiro-Wilk test for normality using Scipy. Cite: https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.shapiro.html
+print(stats.shapiro(setosa.PetalLength))
 
-#sm.qqplot(setosa.PetalLength, line="s")
-#plt.title('Fig 2. Setosa Petal Length Normal QQ Plot')
 
-#print(stats.shapiro(setosa.PetalLength))
+# 2.1.2 Virginica Petal Length 
 
-#plt.show()
+sns.distplot(virginica.PetalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkred", linewidth=.5))
+plt.title('Fig. 3. Virginica Petal Length Histogram')
+plt.xlabel('Petal Length in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-# Shapiro test is greater than .05 so it is normally distributed
+sm.qqplot(virginica.PetalLength, line="s")
+plt.title('Fig. 4. Virginica Petal Length Normal QQ Plot')
+print(stats.shapiro(virginica.PetalLength))
 
-#Virginica Petal Length distribution
 
-#sns.distplot(virginica.PetalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkred", linewidth=.5))
+# 2.1.3 Versicolor Petal Length 
 
-#plt.title('Fig. 3. Virginica Petal Length Histogram')
-#plt.xlabel('Petal Length in cm')
-#plt.ylabel('Frequency')
+sns.distplot(versicolor.PetalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkred", linewidth=.5))
+plt.title('Fig. 5. Versicolor Petal Length Histogram')
+plt.xlabel('Petal Length in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#sm.qqplot(virginica.PetalLength, line="s")
-#plt.title('Fig. 4. Virginica Petal Length Normal QQ Plot')
-#print(stats.shapiro(virginica.PetalLength))
-# Shapiro-wilks is greater than .05, so  normally distributed
+sm.qqplot(versicolor.PetalLength, line="s")
+plt.title('Fig. 6. Versicolor Petal Length Normal QQ Plot')
+plt.show()
 
+print(stats.shapiro(versicolor.PetalLength))
 
+# 2.2.1 Setosa Petal Width 
 
-#Versicolor Petal Length distribution
+sns.distplot(setosa.PetalWidth, hist=True, hist_kws=dict(edgecolor="darkgreen", linewidth=.5), color="green", kde=False, bins=4)
+plt.title('Fig. 7. Setosa Petal Width Histogram')
+plt.xlabel('Petal Width in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#sns.distplot(versicolor.PetalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkred", linewidth=.5))
+sm.qqplot(setosa.PetalWidth, line="s")
+plt.title('Fig. 8. Setosa Petal Width Normal QQ Plot')
+plt.show()
 
-#plt.title('Fig. 5. Versicolor Petal Length Histogram')
-#plt.xlabel('Petal Length in cm')
-#plt.ylabel('Frequency')
+print(stats.shapiro(setosa.PetalWidth))
 
-#sm.qqplot(versicolor.PetalLength, line="s")
-#plt.title('Fig. 6. Versicolor Petal Length Normal QQ Plot')
-#print(stats.shapiro(versicolor.PetalLength))
+# 2.2.2 Virginica Petal Width 
 
-#plt.show()
+sns.distplot(virginica.PetalWidth, hist=True, kde=False, bins=6, hist_kws=dict(edgecolor="darkgreen", linewidth=.5), color="green")
+plt.title('Fig. 9. Virginica Petal Width Histogram')
+plt.xlabel('Petal Width in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-# Shapiro test is greater than .o5 so normally distributed
+sm.qqplot(virginica.PetalWidth, line="s")
+plt.title('Fig. 10. Virginica Petal Width Normal QQ Plot')
+plt.show()
 
-# All normally distributed, but Levine test
-##print(stats.levene(setosa.PetalLength, virginica.PetalLength, versicolor.PetalLength))
-#shows it does not meet variance assumption, however groups are of equal size, so we can use Anova
-#http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
+print(stats.shapiro(virginica.PetalWidth))
 
-#Setosa Petal Width distribution
+# 2.2.3 Versicolor Petal Width 
 
-#sns.distplot(setosa.PetalWidth, hist=True, hist_kws=dict(edgecolor="darkgreen", linewidth=.5), color="green", kde=False, bins=4)
+sns.distplot(versicolor.PetalWidth, hist=True, kde=False, bins=6, hist_kws=dict(edgecolor="darkgreen", linewidth=.5), color="green")
+plt.title('Fig. 11. Versicolor Petal Width Histogram')
+plt.xlabel('Petal Width in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#plt.title('Fig. 7. Setosa Petal Width Histogram')
-#plt.xlabel('Petal Width in cm')
-#plt.ylabel('Frequency')
+sm.qqplot(versicolor.PetalWidth, line="s")
+plt.title('Fig. 12. Versicolor Petal Width Normal QQ Plot')
+plt.show()
 
-#sm.qqplot(setosa.PetalWidth, line="s")
-#plt.title('Fig. 8. Setosa Petal Width Normal QQ Plot')
+print(stats.shapiro(versicolor.PetalWidth))
 
-#print(stats.shapiro(setosa.PetalWidth))
+# 2.3.1 Setosa Sepal Length 
 
-#plt.show()
+sns.distplot(setosa.SepalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkblue", linewidth=.5), color="blue")
+plt.title('Fig. 13. Setosa Sepal Length Histogram')
+plt.xlabel('Sepal Length in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-# Shapiro test is less than .05 so it is not normally distributed
+sm.qqplot(setosa.SepalLength, line="s")
+plt.title('Fig. 14. Setosa Sepal Length Normal QQ Plot')
+plt.show()
 
-#Virginica Petal Width distribution
+print(stats.shapiro(setosa.SepalLength))
 
-#sns.distplot(virginica.PetalWidth, hist=True, kde=False, bins=6, hist_kws=dict(edgecolor="darkgreen", linewidth=.5), color="green")
+# 2.3.2 Virginica Sepal Length 
 
-#plt.title('Fig. 9. Virginica Petal Width Histogram')
-#plt.xlabel('Petal Width in cm')
-#plt.ylabel('Frequency')
+sns.distplot(virginica.SepalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkblue", linewidth=.5), color="blue")
+plt.title('Fig. 15. Virginica Sepal Length Histogram')
+plt.xlabel('Sepal Length in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#sm.qqplot(virginica.PetalWidth, line="s")
-#plt.title('Fig. 10. Virginica Petal Width Normal QQ Plot')
+sm.qqplot(virginica.SepalLength, line="s")
+plt.title('Fig, 16, Virginica Sepal Length Normal QQ Plot')
+plt.show()
 
-#print(stats.shapiro(virginica.PetalWidth))
+print(stats.shapiro(virginica.SepalLength))
 
-#plt.show()
+# 2.3.3 Versicolor Sepal Length
 
-# Shapiro test is greater than .05 so it is normally distributed
+sns.distplot(versicolor.SepalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkblue", linewidth=.5), color="blue")
+plt.title('Fig. 17. Versicolor Sepal Length Histogram')
+plt.xlabel('Sepal Length in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#Versicolor Petal Width distribution
+sm.qqplot(versicolor.SepalLength, line="s")
+plt.title('Fig. 18. Versicolor Sepal Length Normal QQ Plot')
+plt.show()
 
-#sns.distplot(versicolor.PetalWidth, hist=True, kde=False, bins=6, hist_kws=dict(edgecolor="darkgreen", linewidth=.5), color="green")
+print(stats.shapiro(versicolor.SepalLength))
 
-#plt.title('Fig. 11. Versicolor Petal Width Histogram')
-#plt.xlabel('Petal Width in cm')
-#plt.ylabel('Frequency')
 
-#sm.qqplot(versicolor.PetalWidth, line="s")
-#plt.title('Fig. 12. Versicolor Petal Width Normal QQ Plot')
+# 2.4.1 Setosa Sepal Width 
 
-#print(stats.shapiro(versicolor.PetalWidth))
-#plt.show()
-# Shapiro test is less than .05 so it is not normally distributed
-# Not all groups are normall distrivuted, so we use Kruskal wallis
+sns.distplot(setosa.SepalWidth, hist=True, kde=False, hist_kws=dict(edgecolor="darkorange", linewidth=.5), color="orange")
+plt.title('Fig. 19. Setosa Sepal Width Histogram')
+plt.xlabel('Sepal Width in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#print(stats.kruskal(setosa.PetalWidth, virginica.PetalWidth, versicolor.PetalWidth))
+sm.qqplot(setosa.SepalWidth, line="s")
+plt.title('Fig. 20. Setosa Sepal Width Normal QQ Plot')
+plt.show()
 
-#Setosa Sepal Length distribution
+print(stats.shapiro(setosa.SepalWidth))
 
-#sns.distplot(setosa.SepalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkblue", linewidth=.5), color="blue")
+# 2.4.2 Virginica Sepal Width 
 
-#plt.title('Fig. 13. Setosa Sepal Length Histogram')
-#plt.xlabel('Sepal Length in cm')
-#plt.ylabel('Frequency')
+sns.distplot(virginica.SepalWidth, hist=True, kde=False, hist_kws=dict(edgecolor="darkorange", linewidth=.5), color="orange")
+plt.title('Fig. 21. Virginica Sepal Width Histogram')
+plt.xlabel('Sepal Width in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#sm.qqplot(setosa.SepalLength, line="s")
-#plt.title('Fig. 14. Setosa Sepal Length Normal QQ Plot')
+sm.qqplot(virginica.SepalWidth, line="s")
+plt.title('Fig. 22. Virginica Sepal Width Normal QQ Plot')
+plt.show()
 
-#print(stats.shapiro(setosa.SepalLength))
+print(stats.shapiro(virginica.SepalWidth))
 
-#plt.show()
-# Shapiro test is greater than .05 so it is normally distributed
+# 2.4.3 Versicolor Sepal Width 
 
-#Virginica Sepal Length distribution
+sns.distplot(versicolor.SepalWidth, hist=True, kde=False, hist_kws=dict(edgecolor="darkorange", linewidth=.5), color="orange")
+plt.title('Fig. 23. Versicolor Sepal Width Histogram')
+plt.xlabel('Sepal Width in cm')
+plt.ylabel('Frequency')
+plt.show()
 
-#sns.distplot(virginica.SepalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkblue", linewidth=.5), color="blue")
+sm.qqplot(versicolor.SepalWidth, line="s")
+plt.title('Fig. 24. Versicolor Sepal Width Normal QQ Plot')
+plt.show()
 
-#plt.title('Fig. 15. Virginica Sepal Length Histogram')
-#plt.xlabel('Sepal Length in cm')
-#plt.ylabel('Frequency')
+print(stats.shapiro(versicolor.SepalWidth))
 
-#sm.qqplot(virginica.SepalLength, line="s")
-#plt.title('Fig, 16, Virginica Sepal Length Normal QQ Plot')
 
-#print(stats.shapiro(virginica.SepalLength))
-#plt.show()
-# Shapiro test is greater than .05 so it is normally distributed
+# 2.5 Multivariate distribution
 
-#Versicolor Sepal Length distribution
+# Plot shos a multivariate distribution and is created using Pandas. Cite: https://pandas.pydata.org/pandas-docs/stable/visualization.html#parallel-coordinates
 
-#sns.distplot(versicolor.SepalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkblue", linewidth=.5), color="blue")
+parallel_coordinates(df, "Name")
+plt.title('Iris Species Parallel Coordinates')
+plt.ylabel('Centimetres')
+plt.show()
 
-#plt.title('Fig. 17. Versicolor Sepal Length Histogram')
-#plt.xlabel('Sepal Length in cm')
-#plt.ylabel('Frequency')
 
-#sm.qqplot(versicolor.SepalLength, line="s")
-#plt.title('Fig. 18. Versicolor Sepal Length Normal QQ Plot')
 
-#print(stats.shapiro(versicolor.SepalLength))
-
-#plt.show()
-# Shapiro test is greater than .05 so it is normally distributed
-
-# All normally distributed, but Levine test
-#print(stats.levene(setosa.SepalLength, virginica.SepalLength, versicolor.SepalLength))
-#shows it does not meet variance assumption as pvalue is less than .05, however groups are of equal size, so we can use Anova
-#http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
-#print(stats.levene(setosa.PetalWidth, virginica.PetalWidth, versicolor.PetalWidth))
-#print(stats.kruskal(setosa.PetalLength, virginica.PetalLength, versicolor.PetalLength))
-
-#Setosa Sepal Width distribution
-
-#sns.distplot(setosa.SepalWidth, hist=True, kde=False, hist_kws=dict(edgecolor="darkorange", linewidth=.5), color="orange")
-
-#plt.title('Fig. 19. Setosa Sepal Width Histogram')
-#plt.xlabel('Sepal Width in cm')
-#plt.ylabel('Frequency')
-
-#sm.qqplot(setosa.SepalWidth, line="s")
-#plt.title('Fig. 20. Setosa Sepal Width Normal QQ Plot')
-
-#print(stats.shapiro(setosa.SepalWidth))
-
-#plt.show()
-# Shapiro test is greater than .05 so it is normally distributed
-
-#Virginica Sepal Width distribution
-
-#sns.distplot(virginica.SepalWidth, hist=True, kde=False, hist_kws=dict(edgecolor="darkorange", linewidth=.5), color="orange")
-
-#plt.title('Fig. 21. Virginica Sepal Width Histogram')
-#plt.xlabel('Sepal Width in cm')
-#plt.ylabel('Frequency')
-
-#sm.qqplot(virginica.SepalWidth, line="s")
-#plt.title('Fig. 22. Virginica Sepal Width Normal QQ Plot')
-
-#print(stats.shapiro(virginica.SepalWidth))
-#plt.show()
-# Shapiro test is greater than .05 so it is normally distributed
-
-#Versicolor Sepal Width distribution
-
-#sns.distplot(versicolor.SepalWidth, hist=True, kde=False, hist_kws=dict(edgecolor="darkorange", linewidth=.5), color="orange")
-
-#plt.title('Fig. 23. Versicolor Sepal Width Histogram')
-#plt.xlabel('Sepal Width in cm')
-#plt.ylabel('Frequency')
-
-#sm.qqplot(versicolor.SepalWidth, line="s")
-#plt.title('Fig. 24. Versicolor Sepal Width Normal QQ Plot')
-
-#print(stats.shapiro(versicolor.SepalWidth))
-
-#plt.show()
-# Shapiro test is greater than .05 so it is normally distributed
-
-# All normally distributed and Levine test
-#print(stats.levene(setosa.SepalWidth, virginica.SepalWidth, versicolor.SepalWidth))
-#shows it does meet variance assumption as pvalue is greater than .05,  so we can use Anova
-#http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
-
-#Multivariate distribution
-
-#parallel_coordinates(df, "Name")
-#plt.title('Iris Species Parallel Coordinates')
-#plt.ylabel('Centimetres')
-
-#plt.show()
-
-
-
-
-#Compare the Flower Types
 
 
 ## Petal Length
