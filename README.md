@@ -379,7 +379,7 @@ There is a strong positive correlation between sepal length and petal length
 
 ![scatter](https://user-images.githubusercontent.com/35706109/39338697-59a5f70a-49bc-11e8-9980-001cc93533f7.png)
 
-Using swarmplots, barplots and boxplots, as well as ANOVA and Kruskal-Wallis tests, we saw that Setosa petals are significantly smaller than the other species.The above scatterplot created using Pandas clearly shows this difference. 
+Using swarmplots, barplots and boxplots, as well as ANOVA and Kruskal-Wallis tests, we saw that Setosa petals are significantly smaller than the other species. The above scatterplot created using Pandas clearly shows this difference. 
 
 
 **5. The sepal length of all flowers is similar.**
