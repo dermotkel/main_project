@@ -30,7 +30,7 @@
    - [3.3 Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#33-sepal-length)
    - [3.4 Sepal Width](https://github.com/dermotkel/main_project/blob/master/README.md#34-sepal-width)
 - [5 Results](https://github.com/dermotkel/main_project/blob/master/README.md#5-results)
-- [6 Bibliography](https://github.com/dermotkel/main_project/blob/master/README.md#5-bibliography)
+- [6 Bibliography](https://github.com/dermotkel/main_project/blob/master/README.md#6-bibliography)
   
 
 ## 1. Introduction
@@ -394,12 +394,12 @@ Dua, D. and Karra Taniskidou, E. (n.d.). UCI Machine Learning Repository. Retrie
 
 Hamelg. (2015). Python for Data Analysis Part 26: Analysis of Variance (ANOVA). Retrieved April 20, 2018, from http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
 
-Laerd statistics. (n.d.). Types of Variable. Retrieved April 20, 2018, from https://statistics.laerd.com/statistical-guides/types-of-variable.php
+Laerd Statistics. (n.d.). Types of Variable. Retrieved April 20, 2018, from https://statistics.laerd.com/statistical-guides/types-of-variable.php
 
 Marsja, E. (2016). Four ways to conduct one-way ANOVAs with Python. Retrieved April 10, 2018, from https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/
 
-Solutions, S. (2018). The Assumption of Homogeneity of Variance. Retrieved April 20, 2018, from http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
+Statistics Solutions. (2018). The Assumption of Homogeneity of Variance. Retrieved April 20, 2018, from http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
 
-Statistics How-to. (n.d.). Hypothesis Testing. Retrieved April 20, 2018, from http://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/
+Statistics How To. (n.d.). Hypothesis Testing. Retrieved April 20, 2018, from http://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/
 
 
