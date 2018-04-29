@@ -23,6 +23,13 @@
    - [2.4.1 Setosa Sepal Width](https://github.com/dermotkel/main_project/blob/master/README.md#241-setosa-sepal-width)
    - [2.4.2 Virginica Sepal Width](https://github.com/dermotkel/main_project/blob/master/README.md#242-virginica-sepal-width)
    - [2.4.3 Versicolor Sepal Width](https://github.com/dermotkel/main_project/blob/master/README.md#243-versicolor-sepal-width)
+- [2.5 Multivariate Distribution](https://github.com/dermotkel/main_project/blob/master/README.md#25-multivariate-distribution)
+- [3 Differences between species](https://github.com/dermotkel/main_project/blob/master/README.md#3-differences-between-species)
+   - [3.1 Petal Length](https://github.com/dermotkel/main_project/blob/master/README.md#31-petal-length)
+   - [3.2 Petal Width](https://github.com/dermotkel/main_project/blob/master/README.md#32-petal-width)
+   - [3.3 Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#33-sepal-length)
+   - [3.4 Sepal Width](https://github.com/dermotkel/main_project/blob/master/README.md#34-sepal-width)
+- [5 Results](https://github.com/dermotkel/main_project/blob/master/README.md#4-correlation)
   
 
 ## 1. Introduction
@@ -338,7 +345,7 @@ We can also see that there is a strong positive correlation between petal length
 
 ![jointplot](https://user-images.githubusercontent.com/35706109/39337352-63d6a614-49b4-11e8-8301-bddaf98ffc65.png)
 
-## 5. Results
+## 5 Results
 
 We will now answer the research questions and hypotheses posed in the introduction. 
 
