@@ -29,7 +29,8 @@
    - [3.2 Petal Width](https://github.com/dermotkel/main_project/blob/master/README.md#32-petal-width)
    - [3.3 Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#33-sepal-length)
    - [3.4 Sepal Width](https://github.com/dermotkel/main_project/blob/master/README.md#34-sepal-width)
-- [5 Results](https://github.com/dermotkel/main_project/blob/master/README.md#4-correlation)
+- [5 Results](https://github.com/dermotkel/main_project/blob/master/README.md#5-results)
+- [6 Bibliography](https://github.com/dermotkel/main_project/blob/master/README.md#5-bibliography)
   
 
 ## 1. Introduction
