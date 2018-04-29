@@ -1,4 +1,4 @@
-# Project 2018 Programming and Scripting
+# Main Project 2018: Programming and Scripting - Dermot Kelleher
 
 # Table of Contents
 
