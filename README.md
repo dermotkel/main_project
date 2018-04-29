@@ -387,3 +387,17 @@ Using swarmplots, barplots and boxplots, as well as ANOVA and Kruskal-Wallis tes
 
 The barplot above shows that there is a slight difference in the average sepal length across all species and an ANOVA confirmed these differences as significant. 
 
+## 5 Bibliography
+
+Dua, D. and Karra Taniskidou, E. (n.d.). UCI Machine Learning Repository. Retrieved April 18, 2018, from http://archive.ics.uci.edu/ml
+Hamelg. (2015). Python for Data Analysis Part 26: Analysis of Variance (ANOVA). Retrieved April 20, 2018, from http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
+
+Laerd statistics. (n.d.). Types of Variable. Retrieved April 20, 2018, from https://statistics.laerd.com/statistical-guides/types-of-variable.php
+
+Marsja, E. (2016). Four ways to conduct one-way ANOVAs with Python. Retrieved April 10, 2018, from https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/
+
+Solutions, S. (2018). The Assumption of Homogeneity of Variance. Retrieved April 20, 2018, from http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
+
+Statistics How-to. (n.d.). Hypothesis Testing. Retrieved April 20, 2018, from http://www.statisticshowto.com/probability-and-statistics/hypothesis-testing/
+
+
