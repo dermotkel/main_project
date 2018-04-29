@@ -341,23 +341,23 @@ Virginica has the longest and widest petals, followed by Versicolor. Setosa has 
 
 Virginica has the longest sepals, followed by versicolor and then Setosa, but the differences are smaller. interestingly, Setosa has the widest sepals followed closely by Virginica and finally Versicolor.
 
-**3. Is there a postive correlation between Sepal Length and Petal Length?**
+**3. Is there a postive correlation between sepal length and petal length?**
 
 ![jointplot](https://user-images.githubusercontent.com/35706109/39337352-63d6a614-49b4-11e8-8301-bddaf98ffc65.png)
 
 There is a strong positive correlation between sepal length and petal length
 
 
-**4. The petal width and petal length of the Setosa is significantly smaller that the other flowers.**
+**4. The petal width and petal length of the Setosa are significantly smaller than the other species.**
 
 ![scatter](https://user-images.githubusercontent.com/35706109/39338697-59a5f70a-49bc-11e8-9980-001cc93533f7.png)
 
-The above scatterplot created using Pandas clearly shows that Setosa petals are significantly smaller than the others. 
+Using swarmplots, barplots and boxplots, as well as ANOVA and Kruskal-Wallis tests, we saw that Setosa petals are significantly smaller than the other species.The above scatterplot created using Pandas clearly shows this difference. 
 
 
 **5. The sepal length of all flowers is similar.**
 
 ![seplenbar](https://user-images.githubusercontent.com/35706109/39335270-3c7f0926-49aa-11e8-8322-2564a2083b93.png)
 
-The barplot above shows that there is a slight difference in the average sepal length across all flower=types and an ANOVA confirmed these differences as significant. 
+The barplot above shows that there is a slight difference in the average sepal length across all species and an ANOVA confirmed these differences as significant. 
 
