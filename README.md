@@ -4,7 +4,26 @@
 
 - [1. Introduction](https://github.com/dermotkel/main_project/blob/master/README.md#introduction)
   - [1.1 The Iris Dataset](https://github.com/dermotkel/main_project/blob/master/README.md#iris-data-set)
-  - [1.2 Variables](https://github.com/dermotkel/main_project/blob/master/README.md#iris-data-set)
+  - [1.2 Variables](https://github.com/dermotkel/main_project/blob/master/README.md#12-variables)
+  - [1.3 Research Questions and Hypotheses](https://github.com/dermotkel/main_project/blob/master/README.md#13-research-questions-and-hypotheses)
+- [2. Distribution of the Data](https://github.com/dermotkel/main_project/blob/master/README.md#2-distribution-of-the-data)
+  - [2.1 Petal Length Distribution](https://github.com/dermotkel/main_project/blob/master/README.md#21-petal-length-distribution)
+   - [2.1.1 Setosa Petal Length](https://github.com/dermotkel/main_project/blob/master/README.md#211-setosa-petal-length)
+   - [2.1.2 Virginica Petal Length](https://github.com/dermotkel/main_project/blob/master/README.md#212-virginica-petal-length)
+   - [2.1.3 Versicolor Petal Length](https://github.com/dermotkel/main_project/blob/master/README.md#213-versicolor-petal-length)
+  - [2.2 Petal Width Distribution](https://github.com/dermotkel/main_project/blob/master/README.md#22-petal-width-distribution)
+   - [2.2.1 Setosa Petal Width](https://github.com/dermotkel/main_project/blob/master/README.md#221-setosa-petal-width)
+   - [2.2.2 Virginica Petal Width](https://github.com/dermotkel/main_project/blob/master/README.md#222-virginica-petal-width)
+   - [2.2.3 Versicolor Petal Width](https://github.com/dermotkel/main_project/blob/master/README.md#223-versicolor-petal-width)
+  - [2.3 Sepal Length Distribution](https://github.com/dermotkel/main_project/blob/master/README.md#23-sepal-length-distribution)
+   - [2.3.1 Setosa Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#231-setosa-sepal-length)
+   - [2.3.2 Virginica Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#232-virginica-sepal-length)
+   - [2.3.3 Versicolor Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#233-versicolor-sepal-length)
+  - [2.4 Sepal Width Distribution](https://github.com/dermotkel/main_project/blob/master/README.md#23-sepal-length-distribution)
+   - [2.3.1 Setosa Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#231-setosa-sepal-length)
+   - [2.3.2 Virginica Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#232-virginica-sepal-length)
+   - [2.3.3 Versicolor Sepal Length](https://github.com/dermotkel/main_project/blob/master/README.md#233-versicolor-sepal-length)
+  
 
 ## 1. Introduction
 
@@ -164,7 +183,7 @@ The histogram looks normal and the Shapiro-Wilk test of Versicolor sepal length 
 
 The Sepal length of all species is normally distributed. 
 
-### 2.4 Sepal Width
+### 2.4 Sepal Width Distribution
 
 #### 2.4.1 Setosa Sepal Width
 ![setsep](https://user-images.githubusercontent.com/35706109/39275679-0b92a790-48de-11e8-9d46-9cddd7b2f07a.png)
