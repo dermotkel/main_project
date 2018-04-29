@@ -1,3 +1,5 @@
+# Main Project 2018: Programming and Scripting - Dermot Kelleher
+# Below are the various libraries and functions i have imported, including Pandas, Numpy, Seaborn, Scipy, StatsModels and Matplotlib
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,7 +10,6 @@ from scipy import stats
 from scipy.stats import spearmanr
 import statsmodels.api as sm
 sns.set_style("darkgrid")
-from pandas.plotting import andrews_curves
 from statsmodels.formula.api import ols
 from statsmodels.stats.anova import anova_lm
 from statsmodels.stats.multicomp import pairwise_tukeyhsd
@@ -29,7 +30,7 @@ virginica =df[df['Name']=='Iris-virginica']
 
 # 2.1.1 Setosa Petal Length 
 
-# Shoes how to make outlines on the bins. Cite: https://stackoverflow.com/questions/43080259/no-outlines-on-bins-of-matplotlib-histograms-or-seaborn-distplots
+# https://stackoverflow.com/questions/43080259/no-outlines-on-bins-of-matplotlib-histograms-or-seaborn-distplots
 sns.distplot(setosa.PetalLength, hist=True, kde=False, hist_kws=dict(edgecolor="darkred", linewidth=.5)) 
 plt.title('Fig. 1. Setosa Petal Length Histogram')
 plt.xlabel('Petal Length in cm')
@@ -202,7 +203,7 @@ print(stats.shapiro(versicolor.SepalWidth))
 
 # 2.5 Multivariate distribution
 
-# Plot shos a multivariate distribution and is created using Pandas. Cite: https://pandas.pydata.org/pandas-docs/stable/visualization.html#parallel-coordinates
+# Plot shsos a multivariate distribution and is created using Pandas. Cite: https://pandas.pydata.org/pandas-docs/stable/visualization.html#parallel-coordinates
 
 parallel_coordinates(df, "Name")
 plt.title('Iris Species Parallel Coordinates')
@@ -211,183 +212,135 @@ plt.show()
 
 
 
+# 3.1 Petal Length
 
+sns.swarmplot(x="Name", y="PetalLength", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
+plt.title('Fig. 25. Petal Length Swarmplot')
+plt.ylabel('Petal Length in cm')
+plt.show()
 
-## Petal Length
+print(setosa["PetalLength"].describe()) 
+print(virginica["PetalLength"].describe()) 
+print(versicolor["PetalLength"].describe()) 
+# The pandas describe function gives stats such as: median, mean, min, max and standard deviation for each dataset
 
-#sns.swarmplot(x="Name", y="PetalLength", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
-#plt.title('Fig. 25. Petal Length Swarmplot')
-#plt.ylabel('Petal Length in cm')
-#plt.show()
 
-#print(setosa["PetalLength"].describe()) 
-#print(virginica["PetalLength"].describe()) 
-#print(versicolor["PetalLength"].describe()) 
+sns.barplot(x="Name", y="PetalLength", data=df, ci=None)
+plt.ylabel('Average Petal Length in cm')
+plt.title('Fig. 26. Petal Length Barplot')
+plt.show()
 
 
+sns.boxplot(x="Name", y="PetalLength", data=df)
+plt.title('Fig. 27. Petal Length Boxplot')
+plt.show()
+# The swarmplots, barplots and boxplots are created using Seaborn. Cite: https://seaborn.pydata.org/tutorial.html
 
-#sns.barplot(x="Name", y="PetalLength", data=df, ci=None)
-#plt.ylabel('Average Petal Length in cm')
-#plt.title('Fig. 26. Petal Length Barplot')
+print(stats.levene(setosa.PetalLength, virginica.PetalLength, versicolor.PetalLength))
+#Levene's test for homogeneity of variances. Cite: http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
 
 
+mod = ols('PetalLength ~ Name', data=df).fit() 
+aov_table = sm.stats.anova_lm(mod, typ=2)
+print (aov_table)
+# ANOVA test for differences in means. Cite: #https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/
 
-#sns.boxplot(x="Name", y="PetalLength", data=df)
-#plt.title('Fig. 27. Petal Length Boxplot')
+tukey = pairwise_tukeyhsd(endog=df.PetalLength, groups=df.Name, alpha=0.05) #http://www.statsmodels.org/dev/generated/statsmodels.sandbox.stats.multicomp.TukeyHSDResults.plot_simultaneous.html         
+print(tukey.summary())                                                      
+# The post hoc test used for ANOVA - Tukey HSD. Cite: # http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
 
+## 3.2 Petal Width
 
-#plt.show()
+sns.swarmplot(x="Name", y="PetalWidth", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
+plt.title('Fig. 28. Petal Width Swarmplot')
+plt.ylabel('Petal Width in cm')
+plt.show()
 
-#print(stats.levene(setosa.PetalLength, virginica.PetalLength, versicolor.PetalLength))
-#shows it does not meet variance assumption as pvalue is less than .05, however groups are of equal size, so we can use Anova
-#http://www.statisticssolutions.com/the-assumption-of-homogeneity-of-variance/
+sns.barplot(x="Name", y="PetalWidth", data=df, ci=None)
+plt.ylabel('Average Petal Width in cm')
+plt.title('Fig. 29. Petal Width Barplot')
+plt.show()
 
+sns.boxplot(x="Name", y="PetalLength", data=df)
+plt.title('Fig. 30. Petal Length Boxplot')
+plt.show()
 
-#mod = ols('PetalLength ~ Name', data=df).fit() #https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/
-                
-#aov_table = sm.stats.anova_lm(mod, typ=2)
-#print (aov_table)
+print(stats.kruskal(setosa.PetalWidth, virginica.PetalWidth, versicolor.PetalWidth))
 
-#tukey = pairwise_tukeyhsd(endog=df.PetalLength, groups=df.Name, alpha=0.05) #http://www.statsmodels.org/dev/generated/statsmodels.sandbox.stats.multicomp.TukeyHSDResults.plot_simultaneous.html         
-#print(tukey.summary())                                                      # http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
-#tukey.plot_simultaneous()
-#plt.ylabel('Average Petal Length in cm')
+# 3.3 Sepal Length
 
+sns.swarmplot(x="Name", y="SepalLength", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
+plt.title('Fig. 31. Sepal Length Swarmplot')
+plt.ylabel('Sepal Length in cm')
+plt.show()
 
-#plt.show()
+sns.barplot(x="Name", y="SepalLength", data=df, ci=None)
+plt.ylabel('Average Sepal Length in cm')
+plt.title('Fig. 32. Sepal Length Barplot')
+plt.show()
 
-## Petal Width
+sns.boxplot(x="Name", y="SepalLength", data=df)
+plt.title('Fig. 33. Sepal Length Boxplot')
+plt.show()
 
-#sns.swarmplot(x="Name", y="PetalWidth", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
-#plt.title('Fig. 28. Petal Width Swarmplot')
-#plt.ylabel('Petal Width in cm')
-#plt.show()
+mod = ols('SepalLength ~ Name', data=df).fit() 
+aov_table = sm.stats.anova_lm(mod, typ=2)
+print (aov_table)
 
-#print(setosa["PetalWidth"].describe()) 
-#print(virginica["PetalWidth"].describe()) 
-#print(versicolor["PetalWidth"].describe()) 
+tukey = pairwise_tukeyhsd(endog=df.SepalLength, groups=df.Name, alpha=0.05) 
+print(tukey.summary())                                                      
 
+# 3.4 Sepal Width
 
+sns.swarmplot(x="Name", y="SepalWidth", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
+plt.title('Fig. 34. Sepal Width Swarmplot')
+plt.ylabel('Sepal Width in cm')
+plt.show()
 
-#sns.barplot(x="Name", y="PetalWidth", data=df, ci=None)
-#plt.ylabel('Average Petal Width in cm')
-#plt.title('Fig. 29. Petal Width Barplot')
+sns.barplot(x="Name", y="SepalWidth", data=df, ci=None)
+plt.ylabel('Average Sepal Width in cm')
+plt.title('Fig. 35. Sepal Width Barplot')
+plt.show()
 
+sns.boxplot(x="Name", y="SepalWidth", data=df)
+plt.title('Fig. 36. Sepal Width Boxplot')
+plt.show()
 
+mod = ols('SepalWidth ~ Name', data=df).fit() 
+aov_table = sm.stats.anova_lm(mod, typ=2)
+print (aov_table)
 
-#sns.boxplot(x="Name", y="PetalLength", data=df)
-#plt.title('Fig. 30. Petal Length Boxplot')
+tukey = pairwise_tukeyhsd(endog=df.SepalWidth, groups=df.Name, alpha=0.05) 
+print(tukey.summary())                                                      
 
 
-#plt.show()
+# 4 Correlation
 
-#print(stats.kruskal(setosa.PetalWidth, virginica.PetalWidth, versicolor.PetalWidth))
+corr = df.corr() 
+print(corr)
+# Pandas Corr function finds the Pearson's r of the dataset
 
-#Sepal Length
+corr = df.corr()
+sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap="plasma")
+plt.title("Pearson Correlation Matrix")
+plt.show() 
+# Heatmap created using Seaborn. Cite: https://seaborn.pydata.org/generated/seaborn.heatmap.html -
 
+corr = df.corr(method="spearman")
+sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap="plasma")
+plt.title("Spearman Correlation Matrix")
+plt.show() 
 
+# Change the method to spearman to show a spearman's rho correlation.
 
-#sns.swarmplot(x="Name", y="SepalLength", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
-#plt.title('Fig. 31. Sepal Length Swarmplot')
-#plt.ylabel('Sepal Length in cm')
-#plt.show()
+sns.jointplot(x="PetalLength", y="SepalLength", data=df, kind="reg", stat_func=spearmanr) # Youcan change the statistics and shos the correlation using Pearson as it is normally distrubuted ~ https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot
+plt.show()
 
-
-
-
-
-
-#sns.barplot(x="Name", y="SepalLength", data=df, ci=None)
-#plt.ylabel('Average Sepal Length in cm')
-#plt.title('Fig. 32. Sepal Length Barplot')
-#plt.show()
-
-
-
-#sns.boxplot(x="Name", y="SepalLength", data=df)
-#plt.title('Fig. 33. Sepal Length Boxplot')
-
-
-#plt.show()
-
-
-
-#mod = ols('SepalLength ~ Name', data=df).fit() #https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/
-                
-#aov_table = sm.stats.anova_lm(mod, typ=2)
-#print (aov_table)
-
-#tukey = pairwise_tukeyhsd(endog=df.SepalLength, groups=df.Name, alpha=0.05) #http://www.statsmodels.org/dev/generated/statsmodels.sandbox.stats.multicomp.TukeyHSDResults.plot_simultaneous.html         
-#print(tukey.summary())                                                      # http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
-#tukey.plot_simultaneous()
-#plt.ylabel('Average Petal Length in cm')
-
-
-#plt.show()
-
-# Sepal Width
-
-#sns.swarmplot(x="Name", y="SepalWidth", data=df, palette="bright") # a Swarmplot - https://seaborn.pydata.org/tutorial/categorical.html
-#plt.title('Fig. 34. Sepal Width Swarmplot')
-#plt.ylabel('Sepal Width in cm')
-#plt.show()
-
-
-
-
-#sns.barplot(x="Name", y="SepalWidth", data=df, ci=None)
-#plt.ylabel('Average Sepal Width in cm')
-#plt.title('Fig. 35. Sepal Width Barplot')
-#plt.show()
-
-
-
-#sns.boxplot(x="Name", y="SepalWidth", data=df)
-#plt.title('Fig. 36. Sepal Width Boxplot')
-
-
-#plt.show()
-
-
-
-#mod = ols('SepalWidth ~ Name', data=df).fit() #https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/
-                
-#aov_table = sm.stats.anova_lm(mod, typ=2)
-#print (aov_table)
-
-#tukey = pairwise_tukeyhsd(endog=df.SepalWidth, groups=df.Name, alpha=0.05) #http://www.statsmodels.org/dev/generated/statsmodels.sandbox.stats.multicomp.TukeyHSDResults.plot_simultaneous.html         
-#print(tukey.summary())                                                      # http://hamelg.blogspot.ie/2015/11/python-for-data-analysis-part-16_23.html
-#tukey.plot_simultaneous()
-#plt.ylabel('Average Petal Length in cm')
-
-#plt.show()
-
-# Correlation
-
-
-
-#corr = df.corr()
-#print(corr)
-
-
-#corr = df.corr()
-#sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap="plasma")
-#plt.title("Pearson Correlation Matrix")
-#plt.show() # https://seaborn.pydata.org/generated/seaborn.heatmap.html -
-
-#corr = df.corr(method="spearman")
-#sns.heatmap(corr, xticklabels=corr.columns, yticklabels=corr.columns, annot=True, cmap="plasma")
-#plt.title("Spearman Correlation Matrix")
-#plt.show() # https://seaborn.pydata.org/generated/seaborn.heatmap.html -
-
-#sns.jointplot(x="PetalLength", y="SepalLength", data=df, kind="reg", stat_func=spearmanr) # Youcan change the statistics and shos the correlation using Pearson as it is normally distrubuted ~ https://seaborn.pydata.org/generated/seaborn.jointplot.html#seaborn.jointplot
-
-#plt.show()
-
-# Results
+# 5 Results
 
 ax = setosa.plot.scatter(x="PetalLength", y="PetalWidth", color="blue", label="Setosa")
 virginica.plot.scatter(x="PetalLength", y="PetalWidth", color="red", label="Virginica", ax=ax)
 versicolor.plot.scatter(x="PetalLength", y="PetalWidth", color="green", label="Versicolor", ax=ax)
 plt.title("Petal Length and Width Scatterplot")
 plt.show()
+# Scatterplot with multiple axis using Pandas. Cite: https://pandas.pydata.org/pandas-docs/stable/visualization.html#scatter-plot
