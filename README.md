@@ -26,7 +26,7 @@ In this section we will lay out some research questions. These will be the focus
 
 1. Are the three species normally distributed across all dependent variables?
 
-2. Is there a significant difference between the the three species in terms of petal length, petal width, sepal length and sepal width ?
+2. Is there a significant difference between the three species in terms of petal length, petal width, sepal length and sepal width ?
 
 3. Is there a postive correlation between sepal length and petal length?
 
@@ -219,7 +219,7 @@ We will now now look at each variable: Petal length, petal width, sepal length a
 
 ![swarmpw](https://user-images.githubusercontent.com/35706109/39328966-e6242026-4994-11e8-88d3-06b8b8e14cc2.png)
 
-The above swarmplot created using Seaborn compares the petal length of each species by placing each datapoint on the plot. Datapoints with a similar value are places beside each other making the cluster appear wider. 
+The above swarmplot created using Seaborn compares the petal length of each species by placing each datapoint on the plot. Datapoints with a similar value are placeed beside each other making the cluster appear wider. 
 
 The Setosa is much wider and shorter, while Virginica and Versicolor are more disperse. Setosa is clearly smaller with no overlap with the others. Virginica and Versicolor have only a slight overlap. 
 
@@ -233,7 +233,7 @@ The Setosa petal length seems significantly smaller than the other two species.
 
 The boxplot created using Seaborn above shows the differences between the species more clearly. The black diamonds are outliers. The whiskers show the range of the data. The middle line is the medium and the box is the interquartile range (it contains the middle 50% of the data). 
 
-We will now perform a one-way ANOVA test to see if these differences we can observe are statistically significant. The one-way has several assumptions (Laerd Statistics, n.d.). Our data is continuos. As we saw in the last chapter, the petal length is normally distributed. Finally, there should be a homogeneity of variances which we can test by performing a Levene's test using Scipy. The null hypotheses is that there is a homogenity of variances. So we reject the null hypotheses if the p-value is less than our alpha-value pf .05.
+We will now perform a one-way ANOVA test to see if these differences we can observe are statistically significant (Marsja, 2016). The one-way has several assumptions (Laerd Statistics, nd.). Our data is continuos. As we saw in the last chapter, the petal length is normally distributed. Finally, there should be a homogeneity of variances which we can test by performing a Levene's test using Scipy (Statistics Solutions, 2018). The null hypothesis is that there is a homogenity of variances. So we reject the null hypothesis if the p-value is less than our alpha-value of .05.
 
 A Levene's test shows that petal length does not meet the homogenity of variances assumption, *f = 19.72, p= <.000.*
 
@@ -241,13 +241,13 @@ However, Anova is robust if this assumption is not met if the size of the groups
 
 A one-way Anova performed using Scipy shows that there is a significant difference in the petal length between at least two two flower-types, *f = 1179, p= <.000.*
 
-A Tukey posthoc test using Scipy will show which flowertypes are actually significantly different. The null hypothesis is that all flower-types are equal. I include a screenshot from the output below:
+An ANOVA tells us that at least one variable is different from another. A Tukey *post hoc* test using StatsModels will show which species are actually significantly different (Hamelg, 2015). The null hypothesis is that all species are equal. I include a screenshot from the output below:
 
 ![tukey](https://user-images.githubusercontent.com/35706109/39333292-42766d2c-49a2-11e8-8163-9caad8b49284.PNG)
 
-We reject the null hypothesis in all instances. So, the petal length is difference across all flower-types. 
+We reject the null hypothesis in all instances. So, the petal length is difference across all species. 
 
-### Petal Width
+### 3.2 Petal Width
 
 ![petalwidthswarm](https://user-images.githubusercontent.com/35706109/39334087-28b71d98-49a5-11e8-9fd8-526f60b9e0ea.png)
 
@@ -255,11 +255,13 @@ We reject the null hypothesis in all instances. So, the petal length is differen
 
 ![petalwithbox](https://user-images.githubusercontent.com/35706109/39334095-3087fd30-49a5-11e8-9e1e-e4e5e9216c95.png)
 
-The above three plots show, again, that the Setosa seems significantly different to the other flower-types. The others overlap to a small degree. 
+The above three plots show, again, that the Setosa seems significantly different to the other species. The others overlap to a small degree. 
 
-As seen in the previous chapter, two of the three petal width variables are not normally distributed. Therefore, we have to use the non-parametric alternative to the ANOVA, called the Kruskal-Wallis Test using Scipy. The test finds that at least one of the flower-types is significantly different to another *χ2 = 131, p = <.000*. At this stage, we would normally use a post-hoc Dunn's test to check which of the flower-types are different. This is not easily implemented in Python at present. 
+As seen in the previous chapter, two of the three petal width variables are not normally distributed. Therefore, we have to use the non-parametric alternative to the ANOVA, called the Kruskal-Wallis Test using Scipy. The test finds that at least one of the species is significantly different to another *χ2 = 131, p = <.000*. 
 
-### Sepal Length
+At this stage, we would normally use a *post hoc* Dunn's test to check which of the species are different. Similar to how we used the Tukey test with ANOVA. This is not easily implemented in Python at present. 
+
+### 3.3 Sepal Length
 
 ![seplswarm](https://user-images.githubusercontent.com/35706109/39335263-36d1511e-49aa-11e8-833b-401aea163aeb.png)
 
@@ -267,15 +269,15 @@ As seen in the previous chapter, two of the three petal width variables are not 
 
 ![seplbox](https://user-images.githubusercontent.com/35706109/39335275-3f991732-49aa-11e8-8132-ee6d7c39344b.png)
 
-A one-way Anova performed using Scipy shows that there is a significant difference in the sepal length between at least two two flower-types, *f = 119, p= <.000.*
+A one-way Anova performed using Scipy shows that there is a significant difference in the sepal length between at least two two species, *f = 119, p= <.000.*
 
-A screenshot from the Tukey post-hoc test carried out with Scipy is below:
+A screenshot from the Tukey *post hoc test* carried out with StatsModels is below:
 
 ![tukey](https://user-images.githubusercontent.com/35706109/39335709-144f9450-49ac-11e8-8c15-fc7fab068ecb.PNG)
 
-We reject the null hypothesis in all instances. So, the sepal length is difference across all flower-types. 
+We reject the null hypothesis in all instances. So, the sepal length is different across all species. 
 
-### Sepal Width
+### 3.4 Sepal Width
 
 
 ![sepwswarm](https://user-images.githubusercontent.com/35706109/39335995-44465d14-49ad-11e8-8eeb-747383833214.png)
@@ -284,17 +286,17 @@ We reject the null hypothesis in all instances. So, the sepal length is differen
 
 ![sepwbox](https://user-images.githubusercontent.com/35706109/39336002-489ce680-49ad-11e8-87e6-fe36bd70def7.png)
 
-It is interesting to note that Setosa has the widest Sepals of the three flower-types. In all other variables, it appears to be smaller. 
+It is interesting to note that Setosa has the widest Sepals of the three species. In all other variables, it appears to be smaller. 
 
-A one-way Anova performed using Scipy shows that there is a significant difference in the sepal width between at least two two flower-types, *f = 47.3, p= <.000.*
+A one-way Anova performed using Scipy shows that there is a significant difference in the sepal width between at least two species, *f = 47.3, p= <.000.*
 
-A screenshot from the Tukey post-hoc test carried out with Scipy is below:
+A screenshot from the Tukey *post hoc* test carried out with StatsModels is below:
 
 ![tukey](https://user-images.githubusercontent.com/35706109/39336006-4b99d082-49ad-11e8-93c1-e63e665e9e1a.PNG)
 
-We reject the null hypothesis in all instances. So, the sepal width is difference across all flower-types. 
+We reject the null hypothesis in all instances. So, the sepal width is different across all species 
 
-## Correlation
+## 4 Correlation
 
 Finally, we will look at correlation between variables within the dataset. Correlation looks at the relationship between two variables. It is measured on a scale from -1 to 1. A correlation of - 1 means that the two variables have a perfect negative linear relationship. In other words, if one variable increases, the other will always decrease. If they have a correlation of 1, they have a perfect positive linear relationship. They move in the same direction. A correlation of 0 means that there is no relationship. 
 
@@ -304,24 +306,24 @@ The pandas .corr() function gives the Pearson Correlation coefficent of the data
 
 It should be noted, however, that the Pearson's r is a parametric test. It requires that the two variables are normally distributed. If the variables do not meet this requirment, we have to use a non-parametric test, such as Spearman's rho. As we are comparing the variables without differentiating them by their species, we have not checked if they are normally distributed. 
 
-We could perform an analysis as we did in the earlier chapter. However, below i will show a Correlation Matrix Heatmap showing the Pearson's r and Spearman's rho correlations of the data. You will see that both results are similar, though the non-parametric shows a slightly weaker correlation.
+We could perform an analysis as we did in chapter 2, However, below i will show a Correlation Matrix Heatmap showing the Pearson's r and Spearman's rho correlations of the data. You will see that both results are similar, though the non-parametric shows a slightly weaker correlation.
 
 ![pearson](https://user-images.githubusercontent.com/35706109/39337334-4e8e7d90-49b4-11e8-8f13-ba418f16ce89.png)
 
 ![spearman](https://user-images.githubusercontent.com/35706109/39337346-5b2092dc-49b4-11e8-8d0f-706aa1496658.png)
 
 
-It is interesting that there is a strong positive correlation between petal length and petal width. Flowers with longer petals also have wider petals. However, there is appears to be no linear relationship between sepal length and sepal width. 
+It is interesting that there is a strong positive correlation between petal length and petal width. Flowers with longer petals also have wider petals. However, there appears to be no linear relationship between sepal length and sepal width. 
 
-We can also see that there is a strong positive correlation between petal length and sepal length. This relationship is also shown clearly in the jointplot created with Seaborn below. Spearman's rho is used as the Petal Length histogram is bimodal and may not be normally distributed.
+We can also see that there is a strong positive correlation between petal length and sepal length. This relationship is also shown clearly in the jointplot created with Seaborn below. Spearman's rho is used as the petal length histogram is bimodal and may not be normally distributed.
 
 ![jointplot](https://user-images.githubusercontent.com/35706109/39337352-63d6a614-49b4-11e8-8301-bddaf98ffc65.png)
 
-## Results
+## 5. Results
 
 We will now answer the research questions and hypotheses posed in the introduction. 
 
-**1.Are the three flower types normally distributed across all depdent variables?**
+**1. Are the three species normally distributed across all dependent variables?**
 
 |   | **Petal Length** | **Petal Width**  | **Sepal Length** | **Sepal Width** |
 |---|---|---|---|---|
@@ -329,15 +331,15 @@ We will now answer the research questions and hypotheses posed in the introducti
 | **Virginica**   | Yes  | Yes  |Yes   | Yes  |
 | **Versicolor**  | Yes  | No  | Yes  | Yes  |
 
-The chart above shoes that all flower types are normally distributed except for Setosa petal width and Versicolor petal width.
+The chart above shows that all species are normally distributed except for Setosa petal width and Versicolor petal width.
 
-**2. What is the difference in Sepal length/width and petal length/width between the three flower types?**
+**2. Is there a significant difference between the three species in terms of petal length, petal width, sepal length and sepal width ?**
 
 ![pc](https://user-images.githubusercontent.com/35706109/39276283-550bf8f2-48e0-11e8-9203-66c60485de09.png)
 
-virginica has the longest and widest petals, followest by Versicolor. Setosa has the smallest.
+Virginica has the longest and widest petals, followed by Versicolor. Setosa has the smallest.
 
-Virginica has the longest sepals, followed by versicolor and then Setosa, but the differences are smaller. interestingly, Setosa have the widest sepals followed closely by Virginica and finally Versicolor.
+Virginica has the longest sepals, followed by versicolor and then Setosa, but the differences are smaller. interestingly, Setosa has the widest sepals followed closely by Virginica and finally Versicolor.
 
 **3. Is there a postive correlation between Sepal Length and Petal Length?**
 
